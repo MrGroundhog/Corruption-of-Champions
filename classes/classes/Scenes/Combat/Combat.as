@@ -1,4 +1,4 @@
-﻿package classes.Scenes.Combat {
+package classes.Scenes.Combat {
 import classes.BaseContent;
 import classes.BodyParts.Arms;
 import classes.BodyParts.Ears;
@@ -786,7 +786,7 @@ public function unarmedAttack():Number {
 }
 
 public function historyFighterBonus():Number {
-	var historyFighterB:Number = 1.1;
+	var historyFighterB:Number = 1.25;
 	if (player.findPerk(PerkLib.BonesOfSteel) >= 0) historyFighterB += 0.1;
 	if (player.findPerk(PerkLib.MusclesOfSteel) >= 0) historyFighterB += 0.1;
 	if (player.findPerk(PerkLib.HeartOfSteel) >= 0) historyFighterB += 0.1;
@@ -797,7 +797,7 @@ public function historyFighterBonus():Number {
 	return historyFighterB;
 }
 public function historyScoutBonus():Number {
-	var historyScoutB:Number = 1.1;
+	var historyScoutB:Number = 1.25;
 	if (player.findPerk(PerkLib.SoldiersFriend) >= 0) historyScoutB += 0.1;
 	if (player.findPerk(PerkLib.PyrosFriend) >= 0) historyScoutB += 0.1;
 	if (player.findPerk(PerkLib.HeavysFriend) >= 0) historyScoutB += 0.1;
@@ -808,7 +808,7 @@ public function historyScoutBonus():Number {
 	return historyScoutB;
 }
 public function historyTacticianBonus():Number {
-	var historyTacticianB:Number = 1.1;
+	var historyTacticianB:Number = 1.25;
 	/*if (player.findPerk(PerkLib.) >= 0) historyTacticianB += 0.1;
 	if (player.findPerk(PerkLib.) >= 0) historyTacticianB += 0.1;
 	if (player.findPerk(PerkLib.) >= 0) historyTacticianB += 0.1;
@@ -819,14 +819,14 @@ public function historyTacticianBonus():Number {
 	return historyTacticianB;
 }
 public function historyWhoreBonus():Number {
-	var historyWhoreB:Number = 0.15;
-	if (player.findPerk(PerkLib.Amateur) >= 0) historyWhoreB += 0.15;
-	if (player.findPerk(PerkLib.Prostitute) >= 0) historyWhoreB += 0.15;
-	if (player.findPerk(PerkLib.Escort) >= 0) historyWhoreB += 0.15;
-	if (player.findPerk(PerkLib.BrothelOwner) >= 0) historyWhoreB += 0.15;
-	if (player.findPerk(PerkLib.Pornstar) >= 0) historyWhoreB += 0.15;
-	if (player.findPerk(PerkLib.SexChampion) >= 0) historyWhoreB += 0.15;
-	if (player.findPerk(PerkLib.SexDeity) >= 0) historyWhoreB += 0.15;
+	var historyWhoreB:Number = 0.25;
+	if (player.findPerk(PerkLib.Amateur) >= 0) historyWhoreB += 0.25;
+	if (player.findPerk(PerkLib.Prostitute) >= 0) historyWhoreB += 0.25;
+	if (player.findPerk(PerkLib.Escort) >= 0) historyWhoreB += 0.25;
+	if (player.findPerk(PerkLib.BrothelOwner) >= 0) historyWhoreB += 0.25;
+	if (player.findPerk(PerkLib.Pornstar) >= 0) historyWhoreB += 0.25;
+	if (player.findPerk(PerkLib.SexChampion) >= 0) historyWhoreB += 0.25;
+	if (player.findPerk(PerkLib.SexDeity) >= 0) historyWhoreB += 0.25;
 	return historyWhoreB;
 }
 
@@ -1877,7 +1877,7 @@ public function meleeAccuracyPenalty():Number {
 
 public function arrowsAccuracy():Number {
 	var accmod:Number = 80;
-	if (player.hasPerk(PerkLib.HistoryScout) || player.hasPerk(PerkLib.PastLifeScout)) accmod += 40;
+	if (player.hasPerk(PerkLib.HistoryScout) || player.hasPerk(PerkLib.PastLifeScout)) accmod += 50;
 	if (player.hasPerk(PerkLib.Accuracy1)) {
 		accmod += player.perkv1(PerkLib.Accuracy1);
 	}
@@ -4894,7 +4894,7 @@ public function fatigueImpl(mod:Number,type:Number  = USEFATG_NORMAL):void {
 }
 	public function fatigueRecoveryMultiplier():Number {
 		var multi:Number = 1;
-		if (player.hasPerk(PerkLib.HistorySlacker) || player.hasPerk(PerkLib.PastLifeSlacker)) multi += 0.2;
+		if (player.hasPerk(PerkLib.HistorySlacker) || player.hasPerk(PerkLib.PastLifeSlacker)) multi += 0.25;
 		if (player.hasPerk(PerkLib.Whistles)) multi += 0.2;
 		if (player.hasPerk(PerkLib.LyingDown)) multi += 0.2;
 		if (player.hasPerk(PerkLib.TakingABreak)) multi += 0.2;
@@ -4994,9 +4994,9 @@ public function dropItem(monster:Monster, nextFunc:Function = null):void {
 		itype = armors.SEDUCTA;
 	}
 	
-	if(!CoC.instance.plotFight && rand(200) == 0 && player.level >= 7) itype = consumables.BROBREW;
-	if(!CoC.instance.plotFight && rand(200) == 0 && player.level >= 7) itype = consumables.BIMBOLQ;
-	if(!CoC.instance.plotFight && rand(1000) == 0 && player.level >= 7) itype = consumables.RAINDYE;
+	if(!CoC.instance.plotFight && rand(200) == 0 && player.level >= 1) itype = consumables.BROBREW;
+	if(!CoC.instance.plotFight && rand(200) == 0 && player.level >= 1) itype = consumables.BIMBOLQ;
+	if(!CoC.instance.plotFight && rand(1000) == 0 && player.level >= 1) itype = consumables.RAINDYE;
 	//Chance of eggs if Easter!
 	if(!CoC.instance.plotFight && rand(6) == 0 && isEaster()) {
 		itype = randomChoice(
@@ -5032,24 +5032,24 @@ public function awardPlayer(nextFunc:Function = null):void
 	if (player.countCockSocks("gilded") > 0) {
 		//trace( "awardPlayer found MidasCock. Gems bumped from: " + monster.gems );
 		
-		var bonusGems:int = monster.gems * 0.15 + 5 * player.countCockSocks("gilded"); // int so AS rounds to whole numbers
+		var bonusGems:int = monster.gems * 0.25 + 5 * player.countCockSocks("gilded"); // int so AS rounds to whole numbers
 		monster.gems += bonusGems;
 		//trace( "to: " + monster.gems )
 	}
 	if (player.hasPerk(PerkLib.HistoryFortune) || player.hasPerk(PerkLib.PastLifeFortune)) {
-		var bonusGems2:int = monster.gems * 0.15;
-		if (player.hasPerk(PerkLib.Lucky)) bonusGems2 += monster.gems * 0.15;
-		if (player.hasPerk(PerkLib.ExtremelyLucky)) bonusGems2 += monster.gems * 0.15;
-		if (player.hasPerk(PerkLib.MoneyFinder)) bonusGems2 += monster.gems * 0.15;
-		if (player.hasPerk(PerkLib.Collector)) bonusGems2 += monster.gems * 0.15;
-		if (player.hasPerk(PerkLib.Hoarder)) bonusGems2 += monster.gems * 0.15;
-		if (player.hasPerk(PerkLib.BlessedByLadyGodiva)) bonusGems2 += monster.gems * 0.15;
-		if (player.hasPerk(PerkLib.LadyGodivasFavoriteChild)) bonusGems2 += monster.gems * 0.15;
+		var bonusGems2:int = monster.gems * 0.5;
+		if (player.hasPerk(PerkLib.Lucky)) bonusGems2 += monster.gems * 0.25;
+		if (player.hasPerk(PerkLib.ExtremelyLucky)) bonusGems2 += monster.gems * 0.25;
+		if (player.hasPerk(PerkLib.MoneyFinder)) bonusGems2 += monster.gems * 0.25;
+		if (player.hasPerk(PerkLib.Collector)) bonusGems2 += monster.gems * 0.25;
+		if (player.hasPerk(PerkLib.Hoarder)) bonusGems2 += monster.gems * 0.25;
+		if (player.hasPerk(PerkLib.BlessedByLadyGodiva)) bonusGems2 += monster.gems * 0.25;
+		if (player.hasPerk(PerkLib.LadyGodivasFavoriteChild)) bonusGems2 += monster.gems * 0.25;
 		bonusGems2 = Math.round(bonusGems2);
 		monster.gems += bonusGems2;
 	}
 	if (player.hasPerk(PerkLib.HistoryWhore) || player.hasPerk(PerkLib.PastLifeWhore)) {
-		var bonusGems3:int = (monster.gems * 0.04) * (player.teaseLevel * 0.2);
+		var bonusGems3:int = (monster.gems * 0.125) * (player.teaseLevel * 0.25);
 		if (monster.lust >= monster.maxLust()) monster.gems += bonusGems3;
 	}
 	if (player.hasPerk(PerkLib.AscensionFortune)) {
