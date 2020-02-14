@@ -1,4 +1,4 @@
-﻿package classes.Scenes.Places.TelAdre
+package classes.Scenes.Places.TelAdre
 {
 import classes.*;
 import classes.GlobalFlags.kFLAGS;
@@ -574,26 +574,26 @@ import classes.Scenes.SceneLib;
 		
 		public const NEEDLEWORK_LUST_PERK:PerkType = PerkLib.ChiReflowLust;
 		public static const NEEDLEWORK_LUST_PERK_DESC:String = "Uma's Acupuncture Needlework has gifted you with the 'Chi Reflow - Lust' perk. As a result your Lust resistance and Tease attack are enhanced, but Libido and Sensitivity gains are increased.";
-		public static const NEEDLEWORK_LUST_LUST_RESIST:int = 10;
-		public static const NEEDLEWORK_LUST_TEASE_MULTI:Number = 10;
-		public static const NEEDLEWORK_LUST_TEASE_DAMAGE_MULTI:Number = 1.1;
-		public static const NEEDLEWORK_LUST_LIBSENSE_MULTI:Number = 1.1;
+		public static const NEEDLEWORK_LUST_LUST_RESIST:int = 25;
+		public static const NEEDLEWORK_LUST_TEASE_MULTI:Number = 25;
+		public static const NEEDLEWORK_LUST_TEASE_DAMAGE_MULTI:Number = 1.25;
+		public static const NEEDLEWORK_LUST_LIBSENSE_MULTI:Number = 1.25;
 		
 		public const NEEDLEWORK_DEFENSE_PERK:PerkType = PerkLib.ChiReflowDefense;
 		public static const NEEDLEWORK_DEFENSE_PERK_DESC:String = "Uma's Acupuncture Needlework has gifted you with the 'Chi Reflow - Defense' perk. As a result your body has gained passive damage resistance and extra health, but speed is capped.";
-		public static const NEEDLEWORK_DEFENSE_DEFENSE_MULTI:Number = 1.1;
-		public static const NEEDLEWORK_DEFENSE_EXTRA_HP:int = 50;
-		public static const NEEDLEWORK_DEFENSE_SPEED_CAP:int = 60;
+		public static const NEEDLEWORK_DEFENSE_DEFENSE_MULTI:Number = 1.25;
+		public static const NEEDLEWORK_DEFENSE_EXTRA_HP:int = 125;
+		public static const NEEDLEWORK_DEFENSE_SPEED_CAP:int = 75;
 		
 		public const NEEDLEWORK_MAGIC_PERK:PerkType = PerkLib.ChiReflowMagic;
 		public static const NEEDLEWORK_MAGIC_PERK_DESC:String = "Uma's Acupuncture Needlework has gifted you with the 'Chi Reflow - Magic' perk. As a result your spells are now more powerful, but regular attacks are weaker.";
-		public static const NEEDLEWORK_MAGIC_SPELL_MULTI:Number = 0.25; // Additive bonus to the other magic damage bonuses
+		public static const NEEDLEWORK_MAGIC_SPELL_MULTI:Number = 0.5; // Additive bonus to the other magic damage bonuses
 		public static const NEEDLEWORK_MAGIC_REGULAR_MULTI:Number = 0.75; // Multiplier tagged onto the end of damage calculations for the player.
 		
 		public const NEEDLEWORK_ATTACK_PERK:PerkType = PerkLib.ChiReflowAttack;
 		public static const NEEDLEWORK_ATTACK_PERK_DESC:String = "Uma's Acupuncture Needlework has gifted you with the 'Chi Reflow - Attack' perk. As a result your regular attacks are more powerful, but your damage reduction is decreased.";
-		public static const NEEDLEWORK_ATTACK_REGULAR_MULTI:Number = 1.1;
-		public static const NEEDLEWORK_ATTACK_DEFENSE_MULTI:Number = 0.9;
+		public static const NEEDLEWORK_ATTACK_REGULAR_MULTI:Number = 1.25;
+		public static const NEEDLEWORK_ATTACK_DEFENSE_MULTI:Number = 0.75;
 		
 		/**
 		 * Return a short string representation of the selected bonus index
