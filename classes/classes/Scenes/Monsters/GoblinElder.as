@@ -299,7 +299,7 @@ public class GoblinElder extends Goblin
 			this.temperment = TEMPERMENT_RANDOM_GRAPPLES;
 			this.gems = rand(10) + 40;
 			this.drop = new WeightedDrop().
-					add(consumables.GOB_ALE, 5).
+					add(consumables.GOB_ALE, 2).
 					add(consumables.REDUCTO,2).
 					add(jewelries.POWRRNG,1).
 					addMany(1,consumables.L_DRAFT,
