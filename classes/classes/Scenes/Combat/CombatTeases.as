@@ -108,7 +108,7 @@ public class CombatTeases extends BaseCombatContent {
 		//==============================
 		//Determine basic damage.
 		//==============================
-		damage = 6 + rand(3);
+		damage = 6 + rand(6);
 		if (player.findPerk(PerkLib.SensualLover) >= 0) {
 			damage += 2;
 		}
@@ -1439,8 +1439,8 @@ public class CombatTeases extends BaseCombatContent {
 			}
 			if (anus) {
 				if (player.ass.analLooseness == 0) {
-					bonusChance += 1.5;
-					bonusDamage += 3;
+					bonusChance += 2.0;
+					bonusDamage += 5;
 				}
 				if (player.ass.analWetness > 0) {
 					bonusChance += 1;
@@ -1467,13 +1467,13 @@ public class CombatTeases extends BaseCombatContent {
 					bonusDamage += 1;
 				}
 				if (player.ass.analLooseness == 5) {
-					bonusChance += 1.5;
-					bonusDamage += 3;
+					bonusChance += 2.0;
+					bonusDamage += 5;
 				}
 			}
 			//Trim it down!
-			if (bonusChance > 5) bonusChance = 5;
-			if (bonusDamage > 10) bonusDamage = 10;
+			if (bonusChance > 10) bonusChance = 10;
+			if (bonusDamage > 20) bonusDamage = 20;
 		}
 		//Land the hit!
 		if (rand(100) <= chance + rand(bonusChance)) {
