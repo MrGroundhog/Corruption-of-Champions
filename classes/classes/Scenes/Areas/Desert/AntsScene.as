@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Created by aimozg on 05.01.14.
  */
 package classes.Scenes.Areas.Desert
@@ -65,6 +65,10 @@ public class AntsScene extends BaseContent implements TimeAwareInterface
 		public function timeChange():Boolean
 		{
 			pregnancy.pregnancyAdvance();
+			if (flags[kFLAGS.PHYLLA_EGG_LAYING] > 0 && rand(5) == 0 && flags[kFLAGS.ANT_KIDS] < 1000) flags[kFLAGS.ANT_KIDS]++;
+			if (flags[kFLAGS.PHYLLA_EGG_LAYING] > 0 && rand(5) == 0 && flags[kFLAGS.ANT_KIDS] < 2000) flags[kFLAGS.ANT_KIDS]++;
+			if (flags[kFLAGS.PHYLLA_EGG_LAYING] > 0 && rand(5) == 0 && flags[kFLAGS.ANT_KIDS] < 3000) flags[kFLAGS.ANT_KIDS]++;
+			if (flags[kFLAGS.PHYLLA_EGG_LAYING] > 0 && rand(5) == 0 && flags[kFLAGS.ANT_KIDS] < 4000) flags[kFLAGS.ANT_KIDS]++;
 			if (flags[kFLAGS.PHYLLA_EGG_LAYING] > 0 && rand(5) == 0 && flags[kFLAGS.ANT_KIDS] < 5000) flags[kFLAGS.ANT_KIDS]++;
 			if (model.time.hours > 23) {
 				//The pregnancyStore doesn't handle Phylla's ant eggs because they are continuous. The regular egg production is all handled here.
@@ -1097,7 +1101,7 @@ public class AntsScene extends BaseContent implements TimeAwareInterface
 				//(Note: The above option will only be available if Phylla is 'Laying Eggs.')
 				//While Giving Birth (Male) - Written
 				if (flags[kFLAGS.PHYLLA_EGG_LAYING] > 0 && flags[kFLAGS.ANT_KIDS] >= 10) addButton(1, "Fuck Her", dudesFuckEggLayingBitches);
-				if (flags[kFLAGS.ANT_KIDS] > 10 && player.cor >= 75) addButton(3, "Orgy (Male)", orgyWithDatColonyCorruptDudes);
+				if (flags[kFLAGS.ANT_KIDS] > 10 && (player.cor >= 75 || player.lust >= 100)) addButton(3, "Orgy (Male)", orgyWithDatColonyCorruptDudes);
 			}
 			//Straight Sex (Lesbian/Fisting) - Written
 			if (player.hasVagina()) {
@@ -1106,7 +1110,7 @@ public class AntsScene extends BaseContent implements TimeAwareInterface
 				if (flags[kFLAGS.PHYLLA_EGG_LAYING] > 0 && flags[kFLAGS.ANT_KIDS] >= 10) addButton(2, "Lesbian Sex", birfingSexWithAntsForDasLadies);
 				//Orgy w/ Colony (Female)
 				//You tell Phylla you're interested in 'inspecting' your children.
-				if (flags[kFLAGS.ANT_KIDS] > 10 && player.cor >= 75) addButton(4, "Orgy (Female)", antColonyOrgy4Ladies);
+				if (flags[kFLAGS.ANT_KIDS] > 10 && (player.cor >= 75 || player.lust >= 100)) addButton(4, "Orgy (Female)", antColonyOrgy4Ladies);
 			}
 			//Drider/Bee impregnation scene for Phylla (universal unless otherwise specified, which will include varied intros and stuff.
 			//Sex > [Egg Phylla]
@@ -2606,12 +2610,17 @@ public class AntsScene extends BaseContent implements TimeAwareInterface
 			clearOutput();
 			var kidsMod:int = 0;
 			if (flags[kFLAGS.ANT_KIDS] > 10) kidsMod++;
+			if (flags[kFLAGS.ANT_KIDS] > 25) kidsMod++;
 			if (flags[kFLAGS.ANT_KIDS] > 50) kidsMod++;
+			if (flags[kFLAGS.ANT_KIDS] > 100) kidsMod++;
 			if (flags[kFLAGS.ANT_KIDS] > 150) kidsMod++;
 			if (flags[kFLAGS.ANT_KIDS] > 300) kidsMod++;
 			if (flags[kFLAGS.ANT_KIDS] > 600) kidsMod++;
 			if (flags[kFLAGS.ANT_KIDS] > 1000) kidsMod++;
 			if (flags[kFLAGS.ANT_KIDS] > 2000) kidsMod++;
+			if (flags[kFLAGS.ANT_KIDS] > 3000) kidsMod++;
+			if (flags[kFLAGS.ANT_KIDS] > 4000) kidsMod++;
+			if (flags[kFLAGS.ANT_KIDS] > 5000) kidsMod++;
 			//Success
 			if (flags[kFLAGS.PHYLLA_GEMS_HUNTED_TODAY] == 0 && rand(20) + kidsMod > 10) {
 				var gems:int = 0;
@@ -2657,8 +2666,11 @@ public class AntsScene extends BaseContent implements TimeAwareInterface
 			if (flags[kFLAGS.ANT_KIDS] > 200) kidsMod2++;
 			if (flags[kFLAGS.ANT_KIDS] > 300) kidsMod2++;
 			if (flags[kFLAGS.ANT_KIDS] > 400) kidsMod2++;
+			if (flags[kFLAGS.ANT_KIDS] > 500) kidsMod2++;
 			if (flags[kFLAGS.ANT_KIDS] > 600) kidsMod2++;
+			if (flags[kFLAGS.ANT_KIDS] > 700) kidsMod2++;
 			if (flags[kFLAGS.ANT_KIDS] > 800) kidsMod2++;
+			if (flags[kFLAGS.ANT_KIDS] > 900) kidsMod2++;
 			if (flags[kFLAGS.ANT_KIDS] > 1000) kidsMod2++;
 			if (flags[kFLAGS.ANT_KIDS] > 1250) kidsMod2++;
 			if (flags[kFLAGS.ANT_KIDS] > 1500) kidsMod2++;
@@ -2668,6 +2680,8 @@ public class AntsScene extends BaseContent implements TimeAwareInterface
 			if (flags[kFLAGS.ANT_KIDS] > 3000) kidsMod2++;
 			if (flags[kFLAGS.ANT_KIDS] > 3500) kidsMod2++;
 			if (flags[kFLAGS.ANT_KIDS] > 4000) kidsMod2++;
+			if (flags[kFLAGS.ANT_KIDS] > 4500) kidsMod2++;
+			if (flags[kFLAGS.ANT_KIDS] > 5000) kidsMod2++;
 			var stones:int = 4 + rand(8) + (kidsMod2 * 2);
 			flags[kFLAGS.ACHIEVEMENT_PROGRESS_ANTWORKS] += stones;
 			if (flags[kFLAGS.ACHIEVEMENT_PROGRESS_ANTWORKS] >= 200) awardAchievement("AntWorks", kACHIEVEMENTS.GENERAL_ANTWORKS);
