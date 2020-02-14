@@ -71,10 +71,10 @@ public final class LustyMaidensArmor extends Armor {
 		override public function playerEquip():Armor {
 			while (game.player.findPerk(PerkLib.SluttySeduction) >= 0) game.player.removePerk(PerkLib.SluttySeduction);
 			if (game.player.hasVirginVagina()) {
-				game.player.createPerk(PerkLib.SluttySeduction, 10 + game.flags[kFLAGS.BIKINI_ARMOR_BONUS],0,0,0);
+				game.player.createPerk(PerkLib.SluttySeduction, 20 + game.flags[kFLAGS.BIKINI_ARMOR_BONUS],0,0,0);
 			}
 			else {
-				game.player.createPerk(PerkLib.SluttySeduction, 6 + game.flags[kFLAGS.BIKINI_ARMOR_BONUS],0,0,0);
+				game.player.createPerk(PerkLib.SluttySeduction, 10 + game.flags[kFLAGS.BIKINI_ARMOR_BONUS],0,0,0);
 			}
 			return super.playerEquip();
 		}
