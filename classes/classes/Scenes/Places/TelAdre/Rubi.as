@@ -1,4 +1,4 @@
-﻿package classes.Scenes.Places.TelAdre {
+package classes.Scenes.Places.TelAdre {
 import classes.*;
 import classes.GlobalFlags.kACHIEVEMENTS;
 import classes.GlobalFlags.kFLAGS;
@@ -2762,8 +2762,8 @@ private function giveRubiATFItem(itype:ItemType):void {
 			if(flags[kFLAGS.RUBI_BREAST_SIZE] < 0) flags[kFLAGS.RUBI_BREAST_SIZE] = 0;
 		}
 		//(If Penis size increases)
-		if(flags[kFLAGS.RUBI_COCK_SIZE] > 0 && ((flags[kFLAGS.RUBI_COCK_SIZE] < 12 || (this.rubiGetCockType() == CockTypesEnum.HORSE && flags[kFLAGS.RUBI_COCK_SIZE] < 20)) ||
-										(flags[kFLAGS.RUBI_COCK_SIZE] < 30 && flags[kFLAGS.HYPER_HAPPY]) ) )
+		if(flags[kFLAGS.RUBI_COCK_SIZE] > 0 && ((flags[kFLAGS.RUBI_COCK_SIZE] < 30 || (this.rubiGetCockType() == CockTypesEnum.HORSE && flags[kFLAGS.RUBI_COCK_SIZE] < 60)) ||
+										(flags[kFLAGS.RUBI_COCK_SIZE] < 100 && flags[kFLAGS.HYPER_HAPPY]) ) )
 		{
 			outputText("\n\nRubi's [rubi cock] swells up suddenly, growing painfully hard.  [rubi Ey] grasps it and moans suddenly as it begins to pulse, growing larger with every throb, increasing in size by at least an inch, leaving [rubi em] with a ");
 			flags[kFLAGS.RUBI_COCK_SIZE]++;
@@ -3106,7 +3106,7 @@ private function rubiPenisGroPlus():void {
 	outputText("You hand over the vial of greenish liquid.  Rubi takes a moment to look it over, before taking a deep breath and injecting the entire thing into the base of [rubi eir] [rubi cock].");
 
 	//(If Penis increase)
-	if(flags[kFLAGS.RUBI_COCK_SIZE] < 12 || (this.rubiGetCockType() == CockTypesEnum.HORSE && flags[kFLAGS.RUBI_COCK_SIZE] < 20) || (flags[kFLAGS.RUBI_COCK_SIZE] < 30 && flags[kFLAGS.HYPER_HAPPY])) {
+	if(flags[kFLAGS.RUBI_COCK_SIZE] < 30 || (this.rubiGetCockType() == CockTypesEnum.HORSE && flags[kFLAGS.RUBI_COCK_SIZE] < 60) || (flags[kFLAGS.RUBI_COCK_SIZE] < 100 && flags[kFLAGS.HYPER_HAPPY])) {
 		outputText("\n\nRubi grips [rubi eir] cock as it suddenly hardens, visibly throbbing in [rubi eir] grasp.  It surges, growing larger, gaining about two inches right before your eyes.");
 		flags[kFLAGS.RUBI_COCK_SIZE] += 2 + rand(2);
 
