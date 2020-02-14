@@ -93,7 +93,7 @@ package classes.Items
 				case "dragonscale loincloth":
 				case "dragonscale thong":
 				case "fur loincloth":
-					return 1;
+					return 2;
 				case "latex bra":
 				case "latex shorts":
 				case "latex thong":
@@ -102,10 +102,10 @@ package classes.Items
 				case "ebonweave thong":
 				case "ebonweave jockstrap":
 				case "stockings and garters":
-					return 2;
+					return 5;
 				case "rune thong":
 				case "rune jock":
-					return 3;
+					return 10;
 				default:
 					return 0;
 			}
