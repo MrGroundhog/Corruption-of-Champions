@@ -1,4 +1,4 @@
-﻿package classes
+package classes
 {
 import classes.BodyParts.Antennae;
 import classes.BodyParts.Arms;
@@ -1027,10 +1027,10 @@ use namespace CoC;
 					attack += 10;
 				}
 				if (findPerk(PerkLib.JobBrawler) >= 0 && str >= 60) {
-					attack += (5 * newGamePlusMod);
+					attack += (10 * newGamePlusMod);
 				}
 				if (findPerk(PerkLib.MightyFist) >= 0 && isFistOrFistWeapon()) {
-					attack += (5 * newGamePlusMod);
+					attack += (10 * newGamePlusMod);
 				}
 				if (SceneLib.combat.unarmedAttack() > 0) {
 					attack += SceneLib.combat.unarmedAttack();
@@ -8217,7 +8217,7 @@ use namespace CoC;
 				penaltyMultiplier -= (tallness - 72) / 168;
 				if (penaltyMultiplier < 0.4) penaltyMultiplier = 0.4;
 				tempSpeedPenalty *= penaltyMultiplier;
-				maxSpe -= tempSpeedPenalty;
+				//maxSpe -= tempSpeedPenalty;
 				if (maxSpe < 50) maxSpe = 50;
 			}
 			//Perks ahoy
@@ -8249,14 +8249,14 @@ use namespace CoC;
 			//Alter max stats depending on race (+15 za pkt)
 			if (cowScore() >= 4) {
 				if (cowScore() >= 10) {
-					maxStr += (120 * newGamePlusMod);
+					maxStr += (240 * newGamePlusMod);
 					maxTou += (45 * newGamePlusMod);
 					maxSpe -= (40 * newGamePlusMod);
 					maxInt -= (20 * newGamePlusMod);
 					maxLib += (45 * newGamePlusMod);
 				}
 				else {
-					maxStr += (60 * newGamePlusMod);
+					maxStr += (120 * newGamePlusMod);
 					maxTou += (10 * newGamePlusMod);
 					maxSpe -= (20 * newGamePlusMod);
 					maxInt -= (10 * newGamePlusMod);
@@ -8265,14 +8265,14 @@ use namespace CoC;
 			}//+20/10-20
 			if (minotaurScore() >= 4) {
 				if (minotaurScore() >= 10) {
-					maxStr += (120 * newGamePlusMod);
+					maxStr += (240 * newGamePlusMod);
 					maxTou += (45 * newGamePlusMod);
 					maxSpe -= (20 * newGamePlusMod);
 					maxInt -= (40 * newGamePlusMod);
 					maxLib += (45 * newGamePlusMod);
 				}
 				else {
-					maxStr += (60 * newGamePlusMod);
+					maxStr += (120 * newGamePlusMod);
 					maxTou += (10 * newGamePlusMod);
 					maxSpe -= (10 * newGamePlusMod);
 					maxInt -= (20 * newGamePlusMod);
@@ -8281,33 +8281,33 @@ use namespace CoC;
 			}//+20/10-20
 			if (lizardScore() >= 4) {
 				if (lizardScore() >= 8) {
-					maxTou += (70 * newGamePlusMod);
-					maxInt += (50 * newGamePlusMod);
+					maxTou += (140 * newGamePlusMod);
+					maxInt += (100 * newGamePlusMod);
 				}
 				else {
-					maxTou += (40 * newGamePlusMod);
-					maxInt += (20 * newGamePlusMod);
+					maxTou += (80 * newGamePlusMod);
+					maxInt += (40 * newGamePlusMod);
 				}
 			}//+10/10-20
 			if (dragonScore() >= 4) {
 				if (dragonScore() >= 28) {
-				maxStr += (100 * newGamePlusMod);
-				maxTou += (100 * newGamePlusMod);
+				maxStr += (200 * newGamePlusMod);
+				maxTou += (200 * newGamePlusMod);
 				maxSpe += (40 * newGamePlusMod);
 				maxInt += (50 * newGamePlusMod);
 				maxWis += (50 * newGamePlusMod);
 				maxLib += (20 * newGamePlusMod);
 				}//+60
 				else if (dragonScore() >= 20 && dragonScore() < 28) {
-				maxStr += (95 * newGamePlusMod);
-				maxTou += (95 * newGamePlusMod);
+				maxStr += (190 * newGamePlusMod);
+				maxTou += (190 * newGamePlusMod);
 				maxSpe += (20 * newGamePlusMod);
 				maxInt += (40 * newGamePlusMod);
 				maxWis += (40 * newGamePlusMod);
 				maxLib += (10 * newGamePlusMod);
 				}
 				else if (dragonScore() >= 10 && dragonScore() < 20) {
-				maxStr += (50 * newGamePlusMod);
+				maxStr += (100 * newGamePlusMod);
 				maxTou += (40 * newGamePlusMod);
 				maxSpe += (10 * newGamePlusMod);
 				maxInt += (20 * newGamePlusMod);
@@ -8315,73 +8315,73 @@ use namespace CoC;
 				maxLib += (10 * newGamePlusMod);
 				}
 				else {
-				maxStr += (15 * newGamePlusMod);
-				maxTou += (15 * newGamePlusMod);
-				maxInt += (15 * newGamePlusMod);
-				maxWis += (15 * newGamePlusMod);
+				maxStr += (30 * newGamePlusMod);
+				maxTou += (30 * newGamePlusMod);
+				maxInt += (30 * newGamePlusMod);
+				maxWis += (30 * newGamePlusMod);
 				}
 			}//+60/50-60
 			if (jabberwockyScore() >= 10) {
 				if (jabberwockyScore() >= 20) {
 				maxStr += (95 * newGamePlusMod);
 				maxTou += (95 * newGamePlusMod);
-				maxSpe += (100 * newGamePlusMod);
+				maxSpe += (200 * newGamePlusMod);
 				maxInt += (40 * newGamePlusMod);
 				maxWis -= (50 * newGamePlusMod);
 				maxLib += (20 * newGamePlusMod);
 				}
 				else {
-				maxStr += (50 * newGamePlusMod);
+				maxStr += (100 * newGamePlusMod);
 				maxTou += (40 * newGamePlusMod);
-				maxSpe += (50 * newGamePlusMod);
+				maxSpe += (100 * newGamePlusMod);
 				maxInt += (20 * newGamePlusMod);
 				maxWis -= (20 * newGamePlusMod);
 				maxLib += (10 * newGamePlusMod);
 				}
 			}
 			if (dogScore() >= 4) {
-				maxSpe += (15 * newGamePlusMod);
+				maxSpe += (30 * newGamePlusMod);
 				maxInt -= (5 * newGamePlusMod);
 			}//+10/10-20
 			if (mouseScore() >= 4) {
 				if (mouseScore() >= 12 && arms.type == Arms.HINEZUMI && lowerBody == LowerBody.HINEZUMI) {
 					maxStr += (60 * newGamePlusMod);
 					maxTou -= (10 * newGamePlusMod);
-					maxSpe += (80 * newGamePlusMod);
+					maxSpe += (160 * newGamePlusMod);
 					maxWis += (50 * newGamePlusMod);
 				}
 				else if (mouseScore() >= 8) {
 					maxTou -= (10 * newGamePlusMod);
-					maxSpe += (80 * newGamePlusMod);
+					maxSpe += (160 * newGamePlusMod);
 					maxWis += (50 * newGamePlusMod);
 				}
 				else {
 					maxTou -= (10 * newGamePlusMod);
-					maxSpe += (40 * newGamePlusMod);
+					maxSpe += (80 * newGamePlusMod);
 					maxWis += (30 * newGamePlusMod);
 				}
 			}
 			if (wolfScore() >= 4) {
 				if (wolfScore() >= 10) {
-					maxStr += (60 * newGamePlusMod);
+					maxStr += (120 * newGamePlusMod);
 					maxTou += (30 * newGamePlusMod);
-					maxSpe += (60 * newGamePlusMod);
+					maxSpe += (120 * newGamePlusMod);
 					maxInt -= (10 * newGamePlusMod);
 				}
 				else if (wolfScore() >= 7 && hasFur() && coatColor == "glacial white") {
-					maxStr += (30 * newGamePlusMod);
+					maxStr += (60 * newGamePlusMod);
 					maxTou += (20 * newGamePlusMod);
-					maxSpe += (30 * newGamePlusMod);
+					maxSpe += (60 * newGamePlusMod);
 					maxInt -= (10 * newGamePlusMod);
 				}
 				else if (wolfScore() >= 6) {
-					maxStr += (30 * newGamePlusMod);
+					maxStr += (60 * newGamePlusMod);
 					maxTou += (10 * newGamePlusMod);
-					maxSpe += (30 * newGamePlusMod);
+					maxSpe += (60 * newGamePlusMod);
 					maxInt -= (10 * newGamePlusMod);
 				}
 				else {
-					maxStr += (15 * newGamePlusMod);
+					maxStr += (30 * newGamePlusMod);
 					maxSpe += (10 * newGamePlusMod);
 					maxInt -= (10 * newGamePlusMod);
 				}
@@ -8394,7 +8394,7 @@ use namespace CoC;
 					maxInt -= (20 * newGamePlusMod);
 				}
 				else {*/
-					maxStr += (100 * newGamePlusMod);
+					maxStr += (200 * newGamePlusMod);
 					maxTou += (40 * newGamePlusMod);
 					maxSpe += (60 * newGamePlusMod);
 					maxInt -= (20 * newGamePlusMod);
@@ -8403,25 +8403,25 @@ use namespace CoC;
 			if (foxScore() >= 4) {
 				if (foxScore() >= 7) {
 					maxStr -= (30 * newGamePlusMod);
-					maxSpe += (80 * newGamePlusMod);
+					maxSpe += (160 * newGamePlusMod);
 					maxInt += (55 * newGamePlusMod);
 				}
 				else {
 					maxStr -= (5 * newGamePlusMod);
-					maxSpe += (40 * newGamePlusMod);
+					maxSpe += (80 * newGamePlusMod);
 					maxInt += (25 * newGamePlusMod);
 				}
 			}//+10/10-20
 			if (catScore() >= 4) {
 				if (catScore() >= 8) {
-					if (findPerk(PerkLib.Flexibility) > 0) maxSpe += (70 * newGamePlusMod);
-					else maxSpe += (60 * newGamePlusMod);
-					maxLib += (60 * newGamePlusMod);
+					if (findPerk(PerkLib.Flexibility) > 0) maxSpe += (140 * newGamePlusMod);
+					else maxSpe += (120 * newGamePlusMod);
+					maxLib += (120 * newGamePlusMod);
 				}
 				else {
-					if (findPerk(PerkLib.Flexibility) > 0) maxSpe += (50 * newGamePlusMod);
+					if (findPerk(PerkLib.Flexibility) > 0) maxSpe += (100 * newGamePlusMod);
 					else maxSpe += (40 * newGamePlusMod);
-					maxLib += (20 * newGamePlusMod);
+					maxLib += (40 * newGamePlusMod);
 				}
 			}//+10 / 10 - 20
 			if (sphinxScore() >= 14) {
@@ -8429,7 +8429,7 @@ use namespace CoC;
 				maxTou -= (20 * newGamePlusMod);
 				if (findPerk(PerkLib.Flexibility) > 0) maxSpe += (50 * newGamePlusMod);
 				else maxSpe += (40 * newGamePlusMod);
-				maxInt += (100 * newGamePlusMod);
+				maxInt += (200 * newGamePlusMod);
 				maxWis += (40 * newGamePlusMod);
 			}//+50/-20/+40/+100/+40
 			if (nekomataScore() >= 10) {
@@ -8437,30 +8437,30 @@ use namespace CoC;
 				else maxSpe += (40 * newGamePlusMod);
 				if (tailType == 8 && tailCount >= 2 && nekomataScore() >= 12) {
 					maxInt += (40 * newGamePlusMod);
-					maxWis += (100 * newGamePlusMod);
+					maxWis += (200 * newGamePlusMod);
 				}
 				else {
 					maxInt += (30 * newGamePlusMod);
-					maxWis += (80 * newGamePlusMod);
+					maxWis += (160 * newGamePlusMod);
 				}
 			}
 			if (cheshireScore() >= 11) {
 				if (findPerk(PerkLib.Flexibility) > 0) maxSpe += (70 * newGamePlusMod);
 				else maxSpe += (60 * newGamePlusMod);
-				maxInt += (80 * newGamePlusMod);
+				maxInt += (160 * newGamePlusMod);
 				maxSen += (25 * newGamePlusMod)
 			}
 			if (hellcatScore() >= 10) {
 				if (findPerk(PerkLib.Flexibility) > 0) maxSpe += (50 * newGamePlusMod);
 				else maxSpe += (40 * newGamePlusMod);
-				maxInt += (70 * newGamePlusMod);
+				maxInt += (140 * newGamePlusMod);
 				maxLib += (40 * newGamePlusMod);
 				maxSen += (25 * newGamePlusMod);
 			}
 			if (displacerbeastScore() >= 14) {
 				maxStr += (95 * newGamePlusMod);
-				if (findPerk(PerkLib.Flexibility) > 0) maxSpe += (110 * newGamePlusMod);
-				else maxSpe += (100 * newGamePlusMod);
+				if (findPerk(PerkLib.Flexibility) > 0) maxSpe += (220 * newGamePlusMod);
+				else maxSpe += (200 * newGamePlusMod);
 				maxInt -= (25 * newGamePlusMod);
 				maxWis -= (20 * newGamePlusMod);
 				maxLib += (60 * newGamePlusMod);
@@ -8475,50 +8475,50 @@ use namespace CoC;
 				if (bunnyScore() >= 10) {
 					maxStr -= (20 * newGamePlusMod);
 					maxTou -= (10 * newGamePlusMod);
-					maxSpe += (90 * newGamePlusMod);
-					maxLib += (90 * newGamePlusMod);
+					maxSpe += (180 * newGamePlusMod);
+					maxLib += (180 * newGamePlusMod);
 				}
 				else {
 					maxStr -= (10 * newGamePlusMod);
 					maxTou -= (5 * newGamePlusMod);
-					maxSpe += (55 * newGamePlusMod);
+					maxSpe += (110 * newGamePlusMod);
 					maxLib += (35 * newGamePlusMod);
 				}
 			}//+10/10-20
 			if (raccoonScore() >= 4) {
-				maxSpe += (15 * newGamePlusMod);
+				maxSpe += (30 * newGamePlusMod);
 			}//+15/10-20
 			if (horseScore() >= 4) {
 				if (horseScore() >= 7) {
-					maxSpe += (70 * newGamePlusMod);
+					maxSpe += (140 * newGamePlusMod);
 					maxTou += (35 * newGamePlusMod);
 				}
 				else {
-					maxSpe += (40 * newGamePlusMod);
+					maxSpe += (80 * newGamePlusMod);
 					maxTou += (20 * newGamePlusMod);
 				}
 			}//+15/10-20
 			if (goblinScore() >= 10) {
 				maxStr -= (50 * newGamePlusMod);
 				maxSpe += (75 * newGamePlusMod);
-				maxInt += (100 * newGamePlusMod);
+				maxInt += (200 * newGamePlusMod);
 				maxLib += (25 * newGamePlusMod);
 			}//+20/10-20
 			if (gooScore() >= 5) {
 				if (gooScore() >= 15) {
 					maxTou += (115 * newGamePlusMod);
 					maxSpe -= (50 * newGamePlusMod);
-					maxLib += (160 * newGamePlusMod);
+					maxLib += (320 * newGamePlusMod);
 				}
 				else if (gooScore() >= 11) {
 					maxTou += (100 * newGamePlusMod);
 					maxSpe -= (40 * newGamePlusMod);
-					maxLib += (105 * newGamePlusMod);
+					maxLib += (210 * newGamePlusMod);
 				}
 				else {
 					maxTou += (45 * newGamePlusMod);
 					maxSpe -= (20 * newGamePlusMod);
-					maxLib += (50 * newGamePlusMod);
+					maxLib += (100 * newGamePlusMod);
 				}
 			}//+20/10-20
 			if (magmagooScore() >= 6) {
@@ -8526,19 +8526,19 @@ use namespace CoC;
 					maxStr += (45 * newGamePlusMod);
 					maxTou += (115 * newGamePlusMod);
 					maxSpe -= (50 * newGamePlusMod);
-					maxLib += (145 * newGamePlusMod);
+					maxLib += (290 * newGamePlusMod);
 				}
 				else if (magmagooScore() >= 13) {
 					maxStr += (35 * newGamePlusMod);
 					maxTou += (100 * newGamePlusMod);
 					maxSpe -= (40 * newGamePlusMod);
-					maxLib += (100 * newGamePlusMod);
+					maxLib += (200 * newGamePlusMod);
 				}
 				else {
 					maxStr += (15 * newGamePlusMod);
 					maxTou += (45 * newGamePlusMod);
 					maxSpe -= (20 * newGamePlusMod);
-					maxLib += (50 * newGamePlusMod);
+					maxLib += (100 * newGamePlusMod);
 				}
 			}//+20/10-20
 			if (darkgooScore() >= 6) {
@@ -8546,19 +8546,19 @@ use namespace CoC;
 					maxTou += (115 * newGamePlusMod);
 					maxSpe -= (50 * newGamePlusMod);
 					maxInt += (45 * newGamePlusMod);
-					maxLib += (145 * newGamePlusMod);
+					maxLib += (290 * newGamePlusMod);
 				}
 				else if (darkgooScore() >= 13) {
 					maxTou += (90 * newGamePlusMod);
 					maxSpe -= (40 * newGamePlusMod);
 					maxInt += (45 * newGamePlusMod);
-					maxLib += (100 * newGamePlusMod);
+					maxLib += (200 * newGamePlusMod);
 				}
 				else {
 					maxTou += (45 * newGamePlusMod);
 					maxSpe -= (20 * newGamePlusMod);
 					maxInt += (15 * newGamePlusMod);
-					maxLib += (50 * newGamePlusMod);
+					maxLib += (100 * newGamePlusMod);
 				}
 			}//+20/10-20
 			if (kitsuneScore() >= 5) {
@@ -8566,14 +8566,14 @@ use namespace CoC;
 					maxStr -= (50 * newGamePlusMod);
 					maxSpe += (40 * newGamePlusMod);
 					maxInt += (70 * newGamePlusMod);
-					maxWis += (100 * newGamePlusMod);
+					maxWis += (200 * newGamePlusMod);
 					maxLib += (20 * newGamePlusMod);
 				}
 				else {
 					maxStr -= (35 * newGamePlusMod);
 					maxSpe += (20 * newGamePlusMod);
 					maxInt += (30 * newGamePlusMod);
-					maxWis += (40 * newGamePlusMod);
+					maxWis += (80 * newGamePlusMod);
 					maxLib += (20 * newGamePlusMod);
 				}
 			}//+50/50-60
@@ -8598,13 +8598,13 @@ use namespace CoC;
 			}
 		*/	if (beeScore() >= 5) {
 				if (beeScore() >= 9) {
-					maxTou += (50 * newGamePlusMod);
-					maxSpe += (50 * newGamePlusMod);
+					maxTou += (100 * newGamePlusMod);
+					maxSpe += (100 * newGamePlusMod);
 					maxInt += (35 * newGamePlusMod);
 				}
 				else {
-					maxTou += (30 * newGamePlusMod);
-					maxSpe += (30 * newGamePlusMod);
+					maxTou += (60 * newGamePlusMod);
+					maxSpe += (60 * newGamePlusMod);
 					maxInt += (15 * newGamePlusMod);
 				}
 			}//+40/30-40
@@ -8612,72 +8612,72 @@ use namespace CoC;
 				if (spiderScore() >= 7) {
 					maxStr -= (20 * newGamePlusMod);
 					maxTou += (50 * newGamePlusMod);
-					maxInt += (75 * newGamePlusMod);
+					maxInt += (150 * newGamePlusMod);
 				}
 				else {
 					maxStr -= (10 * newGamePlusMod);
 					maxTou += (30 * newGamePlusMod);
-					maxInt += (40 * newGamePlusMod);
+					maxInt += (80 * newGamePlusMod);
 				}
 			}//+10/10-20
 			if (kangaScore() >= 4) {
 				maxTou += (5 * newGamePlusMod);
-				maxSpe += (15 * newGamePlusMod);
+				maxSpe += (30 * newGamePlusMod);
 			}//+20/10-20
 			if (sharkScore() >= 4) {
 				if (sharkScore() >= 10 && vaginas.length > 0 && cocks.length > 0) {
 					maxStr += (60 * newGamePlusMod);
-					maxSpe += (85 * newGamePlusMod);
+					maxSpe += (170 * newGamePlusMod);
 					maxLib += (20 * newGamePlusMod);
 				}
 				else if (sharkScore() >= 9) {
 					maxStr += (40 * newGamePlusMod);
-					maxSpe += (85 * newGamePlusMod);
+					maxSpe += (170 * newGamePlusMod);
 					maxLib += (10 * newGamePlusMod);
 				}
 				else {
 					maxStr += (20 * newGamePlusMod);
-					maxSpe += (40 * newGamePlusMod);
+					maxSpe += (80 * newGamePlusMod);
 				}
 			}//+10/10-20
 			if (harpyScore() >= 4) {
 				if (harpyScore() >= 8) {
 					maxTou -= (20 * newGamePlusMod);
-					maxSpe += (80 * newGamePlusMod);
+					maxSpe += (160 * newGamePlusMod);
 					maxLib += (60 * newGamePlusMod);
 				}
 				else {
 					maxTou -= (10 * newGamePlusMod);
-					maxSpe += (40 * newGamePlusMod);
+					maxSpe += (80 * newGamePlusMod);
 					maxLib += (30 * newGamePlusMod);
 				}
 			}//+10/10-20
 			if (sirenScore() >= 10) {
 				maxStr += (40 * newGamePlusMod);
-				maxSpe += (70 * newGamePlusMod);
+				maxSpe += (140 * newGamePlusMod);
 				maxInt += (40 * newGamePlusMod);
 			}//+20/10-20
 			if (orcaScore() >= 6) {
 				if (orcaScore() >= 12) {
-					maxStr += (70 * newGamePlusMod);
+					maxStr += (140 * newGamePlusMod);
 					maxTou += (40 * newGamePlusMod);
-					maxSpe += (70 * newGamePlusMod);
+					maxSpe += (140 * newGamePlusMod);
 				}
 				else {
-					maxStr += (35 * newGamePlusMod);
+					maxStr += (70 * newGamePlusMod);
 					maxTou += (20 * newGamePlusMod);
-					maxSpe += (35 * newGamePlusMod);
+					maxSpe += (70 * newGamePlusMod);
 				}
 			}//+10/10-20
 			if (oniScore() >= 6) {
 				if (oniScore() >= 12) {
-					maxStr += (100 * newGamePlusMod);
+					maxStr += (200 * newGamePlusMod);
 					maxTou += (60 * newGamePlusMod);
 					maxInt -= (20 * newGamePlusMod);
 					maxWis += (40 * newGamePlusMod);
 				}
 				else {
-					maxStr += (50 * newGamePlusMod);
+					maxStr += (100 * newGamePlusMod);
 					maxTou += (30 * newGamePlusMod);
 					maxInt -= (10 * newGamePlusMod);
 					maxWis += (20 * newGamePlusMod);
@@ -8695,16 +8695,16 @@ use namespace CoC;
 				else */if (elfScore() >= 11) {
 					maxStr -= (10 * newGamePlusMod);
 					maxTou -= (15 * newGamePlusMod);
-					maxSpe += (80 * newGamePlusMod);
-					maxInt += (80 * newGamePlusMod);
+					maxSpe += (160 * newGamePlusMod);
+					maxInt += (160 * newGamePlusMod);
 					maxWis += (60 * newGamePlusMod);
 					maxSen += (30 * newGamePlusMod);
 				}
 				else {
 					maxStr -= (10 * newGamePlusMod);
 					maxTou -= (10 * newGamePlusMod);
-					maxSpe += (40 * newGamePlusMod);
-					maxInt += (40 * newGamePlusMod);
+					maxSpe += (80 * newGamePlusMod);
+					maxInt += (80 * newGamePlusMod);
 					maxWis += (30 * newGamePlusMod);
 					maxSen += (15 * newGamePlusMod);
 				}
@@ -8718,14 +8718,14 @@ use namespace CoC;
 					maxLib += (25 * newGamePlusMod); 
 				}
 				else */if (orcScore() >= 11) {
-					maxStr += (130 * newGamePlusMod);
+					maxStr += (260 * newGamePlusMod);
 					maxTou += (30 * newGamePlusMod);
 					maxSpe += (10 * newGamePlusMod);
 					maxInt -= (30 * newGamePlusMod);
 					maxLib += (25 * newGamePlusMod);
 				}
 				else {
-					maxStr += (60 * newGamePlusMod);
+					maxStr += (120 * newGamePlusMod);
 					maxTou += (15 * newGamePlusMod);
 					maxSpe += (5 * newGamePlusMod);
 					maxInt -= (15 * newGamePlusMod);
@@ -8736,77 +8736,77 @@ use namespace CoC;
 				if (raijuScore() >= 10) {
 					maxSpe += (70 * newGamePlusMod);
 					maxInt += (50 * newGamePlusMod);
-					maxLib += (80 * newGamePlusMod);
+					maxLib += (160 * newGamePlusMod);
 					maxSen += (50 * newGamePlusMod);
 				}
 				else {
 					maxSpe += (35 * newGamePlusMod);
 					maxInt += (25 * newGamePlusMod);
-					maxLib += (40 * newGamePlusMod);
+					maxLib += (80 * newGamePlusMod);
 					maxSen += (25 * newGamePlusMod);
 				}
 			}//+10/10-20
 			if (thunderbirdScore() >= 12) {
 				maxTou -= (20 * newGamePlusMod);
-				maxSpe += (100 * newGamePlusMod);
-				maxLib += (100 * newGamePlusMod);
+				maxSpe += (200 * newGamePlusMod);
+				maxLib += (200 * newGamePlusMod);
 			}//+10/10-20
 			if (demonScore() >= 5) {
 				if (demonScore() >= 11) {
 					maxSpe += (30 * newGamePlusMod);
 					maxInt += (35 * newGamePlusMod);
-					maxLib += (100 * newGamePlusMod);
+					maxLib += (200 * newGamePlusMod);
 				}
 				else {
 					maxSpe += (15 * newGamePlusMod);
 					maxInt += (15 * newGamePlusMod);
-					maxLib += (45 * newGamePlusMod);
+					maxLib += (90 * newGamePlusMod);
 				}
 			}//+60/50-60
 			if (devilkinScore() >= 7) {
 				if (devilkinScore() >= 16 && hasStatusEffect(StatusEffects.PlayerPhylactery)) {
 					if (devilkinScore() >= 21) {
 						maxStr += (105 * newGamePlusMod);
-						maxInt += (150 * newGamePlusMod);
-						maxLib += (100 * newGamePlusMod);
+						maxInt += (300 * newGamePlusMod);
+						maxLib += (200 * newGamePlusMod);
 					}
 					else {
 						maxStr += (95 * newGamePlusMod);
 						maxInt += (85 * newGamePlusMod);
-						maxLib += (100 * newGamePlusMod);
+						maxLib += (200 * newGamePlusMod);
 					}
 				}
 				else if (devilkinScore() >= 11) {
 					maxStr += (65 * newGamePlusMod);
 					maxSpe -= (20 * newGamePlusMod);
 					maxInt += (60 * newGamePlusMod);
-					maxLib += (75 * newGamePlusMod);
+					maxLib += (150 * newGamePlusMod);
 				}
 				else {
 					maxStr += (35 * newGamePlusMod);
 					maxSpe -= (10 * newGamePlusMod);
 					maxInt += (40 * newGamePlusMod);
-					maxLib += (50 * newGamePlusMod);
+					maxLib += (100 * newGamePlusMod);
 				}
 			}//+60/50-60
 			if (rhinoScore() >= 4) {
-				maxStr += (15 * newGamePlusMod);
-				maxTou += (15 * newGamePlusMod);
+				maxStr += (30 * newGamePlusMod);
+				maxTou += (30 * newGamePlusMod);
 				maxSpe -= (10 * newGamePlusMod);
 				maxInt -= (10 * newGamePlusMod);
 			}//+10/10-20
 			if (satyrScore() >= 4) {
-				maxStr += (5 * newGamePlusMod);
-				maxSpe += (5 * newGamePlusMod);
+				maxStr += (10 * newGamePlusMod);
+				maxSpe += (10 * newGamePlusMod);
 			}//+10/10-20
 			if (manticoreScore() >= 6) {
 				if (manticoreScore() >= 12) {
-					maxSpe += (100 * newGamePlusMod);
+					maxSpe += (200 * newGamePlusMod);
 					maxInt += (50 * newGamePlusMod);
 					maxLib += (60 * newGamePlusMod);
 				}
 				else {
-					maxSpe += (50 * newGamePlusMod);
+					maxSpe += (100 * newGamePlusMod);
 					maxInt += (25 * newGamePlusMod);
 					maxLib += (30 * newGamePlusMod);
 				}
@@ -8814,43 +8814,43 @@ use namespace CoC;
 			if (redpandaScore() >= 4) {
 				if (redpandaScore() >= 8) {
 					maxStr += (15 * newGamePlusMod);
-					maxSpe += (75 * newGamePlusMod);
+					maxSpe += (150 * newGamePlusMod);
 					maxInt += (30 * newGamePlusMod);
 				}
 				else {
-					maxSpe += (45 * newGamePlusMod);
+					maxSpe += (90 * newGamePlusMod);
 					maxInt += (15 * newGamePlusMod);
 				}
 			}
 			if (bearpandaScore() >= 5) {
 				if (bearpandaScore() >= 10) {
-					maxStr += (100 * newGamePlusMod);
+					maxStr += (200 * newGamePlusMod);
 					maxTou += (70 * newGamePlusMod);
 					maxInt -= (20 * newGamePlusMod);
 				}
 				else {
-					maxStr += (50 * newGamePlusMod);
+					maxStr += (100 * newGamePlusMod);
 					maxTou += (30 * newGamePlusMod);
 					maxInt -= (5 * newGamePlusMod);
 				}
 			}
 			if (pigScore() >= 5) {
 				if (pigScore() >= 15) {
-					maxStr += (125 * newGamePlusMod);
-					maxTou += (125 * newGamePlusMod);
+					maxStr += (250 * newGamePlusMod);
+					maxTou += (250 * newGamePlusMod);
 					maxSpe -= (15 * newGamePlusMod);
 					maxInt -= (10 * newGamePlusMod);
 				}
 				else if (pigScore() >= 10 && pigScore() < 15) {
 					maxStr += (60 * newGamePlusMod);
-					maxTou += (120 * newGamePlusMod);
+					maxTou += (240 * newGamePlusMod);
 					maxSpe -= (15 * newGamePlusMod);
 					maxInt -= (10 * newGamePlusMod);
 					maxWis -= (5 * newGamePlusMod);
 				}
 				else {
 					maxStr += (30 * newGamePlusMod);
-					maxTou += (60 * newGamePlusMod);
+					maxTou += (120 * newGamePlusMod);
 					maxSpe -= (10 * newGamePlusMod);
 					maxInt -= (5 * newGamePlusMod);
 				}
@@ -8859,13 +8859,13 @@ use namespace CoC;
 				if (mantisScore() >= 12) {
 					maxStr -= (40 * newGamePlusMod);
 					maxTou += (60 * newGamePlusMod);
-					maxSpe += (140 * newGamePlusMod);
+					maxSpe += (280 * newGamePlusMod);
 					maxInt += (20 * newGamePlusMod);
 				}
 				else {
 					maxStr -= (20 * newGamePlusMod);
 					maxTou += (30 * newGamePlusMod);
-					maxSpe += (70 * newGamePlusMod);
+					maxSpe += (140 * newGamePlusMod);
 					maxInt += (10 * newGamePlusMod);
 				}
 			}//+35/30-40
@@ -8873,24 +8873,24 @@ use namespace CoC;
 				if (salamanderScore() >= 7) {
 					maxStr += (25 * newGamePlusMod);
 					maxTou += (25 * newGamePlusMod);
-					maxLib += (40 * newGamePlusMod);
+					maxLib += (80 * newGamePlusMod);
 				}
 				else {
 					maxStr += (15 * newGamePlusMod);
 					maxTou += (15 * newGamePlusMod);
-					maxLib += (30 * newGamePlusMod);
+					maxLib += (60 * newGamePlusMod);
 				}
 			}//+15/10-20
 			if (cavewyrmScore() >= 5) {
 				if (cavewyrmScore() >= 10) {
 					maxStr += (60 * newGamePlusMod);
-					maxTou += (70 * newGamePlusMod);
+					maxTou += (140 * newGamePlusMod);
 					maxWis -= (30 * newGamePlusMod);
 					maxLib += (50 * newGamePlusMod);
 				}
 				else {
 					maxStr += (30 * newGamePlusMod);
-					maxTou += (35 * newGamePlusMod);
+					maxTou += (70 * newGamePlusMod);
 					maxWis -= (15 * newGamePlusMod);
 					maxLib += (25 * newGamePlusMod);
 				}
@@ -8899,81 +8899,81 @@ use namespace CoC;
 				maxTou += (20 * newGamePlusMod);
 				maxSpe += (40 * newGamePlusMod);
 				maxInt += (30 * newGamePlusMod);
-				maxWis += (60 * newGamePlusMod);
+				maxWis += (120 * newGamePlusMod);
 			}//+(15)30/(10-20)30-40
 			if (alicornScore() >= 12) {
 				maxTou += (25 * newGamePlusMod);
 				maxSpe += (50 * newGamePlusMod);
 				maxInt += (35 * newGamePlusMod);
-				maxWis += (70 * newGamePlusMod);
+				maxWis += (140 * newGamePlusMod);
 			}//+(30)55/(30-40)50-60
 			if (phoenixScore() >= 10) {
 				maxStr += (20 * newGamePlusMod);
 				maxTou += (20 * newGamePlusMod);
-				maxSpe += (70 * newGamePlusMod);
+				maxSpe += (140 * newGamePlusMod);
 				maxLib += (40 * newGamePlusMod);
 			}//+30/30-40
 			if (scyllaScore() >= 4) {
 				if (scyllaScore() >= 12) {
-					maxStr += (120 * newGamePlusMod);
+					maxStr += (240 * newGamePlusMod);
 					maxInt += (60 * newGamePlusMod);
 				}
 				else if (scyllaScore() >= 7 && scyllaScore() < 12) {
-					maxStr += (65 * newGamePlusMod);
+					maxStr += (130 * newGamePlusMod);
 					maxInt += (40 * newGamePlusMod);
 				}
 				else {
-					maxStr += (40 * newGamePlusMod);
+					maxStr += (80 * newGamePlusMod);
 					maxInt += (20 * newGamePlusMod);
 				}
 			}//+30/30-40
 			if (plantScore() >= 4) {
 				if (plantScore() >= 7) {
 					maxStr += (25 * newGamePlusMod);
-					maxTou += (100 * newGamePlusMod);
+					maxTou += (200 * newGamePlusMod);
 					maxSpe -= (50 * newGamePlusMod);
 				}
 				else if (plantScore() == 6) {
 					maxStr += (20 * newGamePlusMod);
-					maxTou += (80 * newGamePlusMod);
+					maxTou += (160 * newGamePlusMod);
 					maxSpe -= (40 * newGamePlusMod);
 				}
 				else if (plantScore() == 5) {
 					maxStr += (10 * newGamePlusMod);
-					maxTou += (50 * newGamePlusMod);
+					maxTou += (100 * newGamePlusMod);
 					maxSpe -= (20 * newGamePlusMod);
 				}
 				else {
-					maxTou += (30 * newGamePlusMod);
+					maxTou += (60 * newGamePlusMod);
 					maxSpe -= (10 * newGamePlusMod);
 				}
 			}//+20(40)(60)(75)/10-20(30-40)(50-60)(70-80)
 			if (alrauneScore() >= 10) {
-				maxTou += (100 * newGamePlusMod);
+				maxTou += (200 * newGamePlusMod);
 				maxSpe -= (50 * newGamePlusMod);
-				maxLib += (100 * newGamePlusMod);
+				maxLib += (200 * newGamePlusMod);
 			}
 			if (yggdrasilScore() >= 10) {
 				maxStr += (50 * newGamePlusMod);
 				maxTou += (70 * newGamePlusMod);
 				maxSpe -= (50 * newGamePlusMod);
 				maxInt += (50 * newGamePlusMod);
-				maxWis += (80 * newGamePlusMod);
+				maxWis += (160 * newGamePlusMod);
 				maxLib -= (50 * newGamePlusMod);
 			}//+150
 			if (deerScore() >= 4) {
-				maxSpe += (20 * newGamePlusMod);
+				maxSpe += (40 * newGamePlusMod);
 			}//+20/10-20
 			if (yetiScore() >= 7) {
 				if (yetiScore() >= 14) {
-					maxStr += (100 * newGamePlusMod);
+					maxStr += (200 * newGamePlusMod);
 					maxTou += (80 * newGamePlusMod);
 					maxSpe += (50 * newGamePlusMod);
 					maxInt -= (70 * newGamePlusMod);
 					maxLib += (50 * newGamePlusMod);
 				}
 				else {
-					maxStr += (50 * newGamePlusMod);
+					maxStr += (100 * newGamePlusMod);
 					maxTou += (40 * newGamePlusMod);
 					maxSpe += (25 * newGamePlusMod);
 					maxInt -= (35 * newGamePlusMod);
@@ -8982,7 +8982,7 @@ use namespace CoC;
 			}
 			if (yukiOnnaScore() >= 14) {
 				maxSpe += (70 * newGamePlusMod);
-				maxInt += (140 * newGamePlusMod);
+				maxInt += (280 * newGamePlusMod);
 				maxWis += (70 * newGamePlusMod);
 				maxLib += (50 * newGamePlusMod);
 			}
@@ -8990,22 +8990,22 @@ use namespace CoC;
 				if (poltergeistScore() >= 18) {
 					maxStr -= (45 * newGamePlusMod);
 					maxTou -= (45 * newGamePlusMod);
-					maxSpe += (150 * newGamePlusMod);
-					maxInt += (150 * newGamePlusMod);
+					maxSpe += (300 * newGamePlusMod);
+					maxInt += (300 * newGamePlusMod);
 					maxWis += (60 * newGamePlusMod);
 				}
 				else if (poltergeistScore() >= 12) {
 					maxStr -= (25 * newGamePlusMod);
 					maxTou -= (25 * newGamePlusMod);
-					maxSpe += (90 * newGamePlusMod);
-					maxInt += (90 * newGamePlusMod);
+					maxSpe += (180 * newGamePlusMod);
+					maxInt += (180 * newGamePlusMod);
 					maxWis += (45 * newGamePlusMod);
 				}
 				else {
 					maxStr -= (15 * newGamePlusMod);
 					maxTou -= (15 * newGamePlusMod);
-					maxSpe += (45 * newGamePlusMod);
-					maxInt += (45 * newGamePlusMod);
+					maxSpe += (90 * newGamePlusMod);
+					maxInt += (90 * newGamePlusMod);
 					maxWis += (30 * newGamePlusMod);
 				}
 			}
@@ -9014,29 +9014,29 @@ use namespace CoC;
 			}
 			if (firesnailScore() >= 15) {
 				maxStr += (65 * newGamePlusMod);
-				maxTou += (140 * newGamePlusMod);
+				maxTou += (280 * newGamePlusMod);
 				maxSpe -= (80 * newGamePlusMod);
 				maxLib += (100 * newGamePlusMod);
 				maxSen += (50 * newGamePlusMod);
 			}//+30/30-40
 			if (lowerBody == 51 && hydraScore() >= 14) {
 				if (hydraScore() >= 29) {
-					maxStr += (160 * newGamePlusMod);
+					maxStr += (320 * newGamePlusMod);
 					maxTou += (145 * newGamePlusMod);
 					maxSpe += (130 * newGamePlusMod);
 				}
 				else if (hydraScore() >= 24) {
-					maxStr += (130 * newGamePlusMod);
+					maxStr += (260 * newGamePlusMod);
 					maxTou += (125 * newGamePlusMod);
 					maxSpe += (105 * newGamePlusMod);
 				}
 				else if (hydraScore() >= 19) {
-					maxStr += (120 * newGamePlusMod);
+					maxStr += (240 * newGamePlusMod);
 					maxTou += (105 * newGamePlusMod);
 					maxSpe += (60 * newGamePlusMod);
 				}
 				else {
-					maxStr += (100 * newGamePlusMod);
+					maxStr += (200 * newGamePlusMod);
 					maxTou += (50 * newGamePlusMod);
 					maxSpe += (60 * newGamePlusMod);
 				}
@@ -9044,91 +9044,91 @@ use namespace CoC;
 			if (couatlScore() >= 11) {
 				maxStr += (40 * newGamePlusMod);
 				maxTou += (25 * newGamePlusMod);
-				maxSpe += (100 * newGamePlusMod);
+				maxSpe += (200 * newGamePlusMod);
 			}//+30/30-40
 			if (vouivreScore() >= 11) {
 				maxStr += (10 * newGamePlusMod);
 				maxTou -= (10 * newGamePlusMod);
-				maxSpe += (35 * newGamePlusMod);
+				maxSpe += (70 * newGamePlusMod);
 				maxInt += (10 * newGamePlusMod);
 				maxWis -= (20 * newGamePlusMod);
 			}//+30/30-40
 			if (gorgonScore() >= 11) {
 				maxStr += (50 * newGamePlusMod);
 				maxTou += (45 * newGamePlusMod);
-				maxSpe += (70 * newGamePlusMod);
+				maxSpe += (140 * newGamePlusMod);
 			}//+30/30-40
 			if (nagaScore() >= 4)
 			{
 				if (nagaScore() >= 8) {
 					maxStr += (40 * newGamePlusMod);
 					maxTou += (20 * newGamePlusMod);
-					maxSpe += (60 * newGamePlusMod);
+					maxSpe += (120 * newGamePlusMod);
 				}
 				else {
 					maxStr += (20 * newGamePlusMod);
-					maxSpe += (40 * newGamePlusMod);
+					maxSpe += (80 * newGamePlusMod);
 				}
 			}
 			if (centaurScore() >= 8) {
-				maxTou += (80 * newGamePlusMod);
+				maxTou += (160 * newGamePlusMod);
 				maxSpe += (40 * newGamePlusMod);
 			}//+40/30-40
 			if (avianScore() >= 4) {
 				if (avianScore() >= 9) {
 					maxStr += (30 * newGamePlusMod);
-					maxSpe += (75 * newGamePlusMod);
+					maxSpe += (150 * newGamePlusMod);
 					maxInt += (30 * newGamePlusMod);
 				}
 				else {
 					maxStr += (15 * newGamePlusMod);
-					maxSpe += (30 * newGamePlusMod);
+					maxSpe += (60 * newGamePlusMod);
 					maxInt += (15 * newGamePlusMod);
 				}
 			}
 			if (isNaga()) {
-				maxStr += (15 * newGamePlusMod);
-				maxSpe += (15 * newGamePlusMod);
+				maxStr += (30 * newGamePlusMod);
+				maxSpe += (30 * newGamePlusMod);
 			}
 			if (isTaur()) {
-				maxSpe += (20 * newGamePlusMod);
+				maxSpe += (40 * newGamePlusMod);
 			}
 			if (isDrider()) {
-				maxTou += (15 * newGamePlusMod);
-				maxSpe += (15 * newGamePlusMod);
+				maxTou += (30 * newGamePlusMod);
+				maxSpe += (30 * newGamePlusMod);
 			}
 			if (isScylla()) {
-				maxStr += (30 * newGamePlusMod);
+				maxStr += (60 * newGamePlusMod);
 			}
 			if (isAlraune()) {
-				maxTou += (15 * newGamePlusMod);
-				maxLib += (15 * newGamePlusMod);
+				maxTou += (30 * newGamePlusMod);
+				maxLib += (30 * newGamePlusMod);
 			}
 			if (batScore() >= 6){
                 var mod:int = batScore() >= 10 ? 35:20;
                 maxStr += mod * newGamePlusMod;
                 maxSpe += mod * newGamePlusMod;
                 maxInt += mod * newGamePlusMod;
-                maxLib += (10+mod) * newGamePlusMod;
+                maxLib += (20+mod) * newGamePlusMod;
 			}
 			if (vampireScore() >= 6){
                 mod = vampireScore() >= 10 ? 35:20;
 				maxStr += mod * newGamePlusMod;
 				maxSpe += mod * newGamePlusMod;
 				maxInt += mod * newGamePlusMod;
-				maxLib += (10 + mod) * newGamePlusMod;
+				maxLib += (20 + mod) * newGamePlusMod;
 			}
 			if (internalChimeraScore() >= 1) {
-				maxStr += (5 * internalChimeraScore() * newGamePlusMod);
-				maxTou += (5 * internalChimeraScore() * newGamePlusMod);
-				maxSpe += (5 * internalChimeraScore() * newGamePlusMod);
-				maxInt += (5 * internalChimeraScore() * newGamePlusMod);
-				maxWis += (5 * internalChimeraScore() * newGamePlusMod);
-				maxLib += (5 * internalChimeraScore() * newGamePlusMod);
-				maxSen += (5 * internalChimeraScore() * newGamePlusMod);
+				maxStr += (10 * internalChimeraScore() * newGamePlusMod);
+				maxTou += (10 * internalChimeraScore() * newGamePlusMod);
+				maxSpe += (10 * internalChimeraScore() * newGamePlusMod);
+				maxInt += (10 * internalChimeraScore() * newGamePlusMod);
+				maxWis += (10 * internalChimeraScore() * newGamePlusMod);
+				maxLib += (10 * internalChimeraScore() * newGamePlusMod);
+				maxSen += (10 * internalChimeraScore() * newGamePlusMod);
 			}
 			if (jiangshiScore() >= 20) {
-				maxStr += (140 * newGamePlusMod);
+				maxStr += (280 * newGamePlusMod);
 				maxTou += (100 * newGamePlusMod);
 				maxSpe -= (90 * newGamePlusMod);
 				maxInt -= (90 * newGamePlusMod);
@@ -9138,24 +9138,24 @@ use namespace CoC;
 			if (gargoyleScore() >= 20) {
 				if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 1) {
 					maxStr += (165 * newGamePlusMod);
-					maxTou += (250 * newGamePlusMod);
+					maxTou += (500 * newGamePlusMod);
 					maxSpe += (50 * newGamePlusMod);
 					maxInt += (30 * newGamePlusMod);
 				}
 				if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 2) {
 					maxStr += (50 * newGamePlusMod);
-					maxTou += (250 * newGamePlusMod);
+					maxTou += (500 * newGamePlusMod);
 					maxSpe += (30 * newGamePlusMod);
 					maxInt += (165 * newGamePlusMod);
 				}
 				if (findPerk(PerkLib.GargoylePure) >= 0) {
-					maxWis += (80 * newGamePlusMod);
+					maxWis += (160 * newGamePlusMod);
 					maxLib -= (10 * newGamePlusMod);
 					maxSen -= (10 * newGamePlusMod);
 				}
 				if (findPerk(PerkLib.GargoyleCorrupted) >= 0) {
 					maxWis -= (10 * newGamePlusMod);
-					maxLib += (80 * newGamePlusMod);
+					maxLib += (160 * newGamePlusMod);
 				}
 			}
 			if (maxStr < 25) maxStr = 25;
@@ -9329,23 +9329,23 @@ use namespace CoC;
 			if (findPerk(PerkLib.TrachealSystemFinalForm) >= 0) maxSpe += (10 * newGamePlusMod);
 			if (findPerk(PerkLib.VenomGlandsFinalForm) >= 0) maxTou += (10 * newGamePlusMod);
 			if (findPerk(PerkLib.EzekielBlessing) >= 0) {
-				maxStr += (5 * newGamePlusMod);
-				maxTou += (5 * newGamePlusMod);
-				maxSpe += (5 * newGamePlusMod);
-				maxInt += (5 * newGamePlusMod);
-				maxWis += (5 * newGamePlusMod);
-				maxLib += (5 * newGamePlusMod);
-				maxSen += (5 * newGamePlusMod);
+				maxStr += (25 * newGamePlusMod);
+				maxTou += (25 * newGamePlusMod);
+				maxSpe += (25 * newGamePlusMod);
+				maxInt += (25 * newGamePlusMod);
+				maxWis += (25 * newGamePlusMod);
+				maxLib += (25 * newGamePlusMod);
+				maxSen += (25 * newGamePlusMod);
 			}
 			//Perks
 			if (findPerk(PerkLib.JobAllRounder) >= 0) {
-				maxStr += (5 * newGamePlusMod);
-				maxTou += (5 * newGamePlusMod);
-				maxSpe += (5 * newGamePlusMod);
-				maxInt += (5 * newGamePlusMod);
-				maxWis += (5 * newGamePlusMod);
-				maxLib += (5 * newGamePlusMod);
-				maxSen += (5 * newGamePlusMod);
+				maxStr += (10 * newGamePlusMod);
+				maxTou += (10 * newGamePlusMod);
+				maxSpe += (10 * newGamePlusMod);
+				maxInt += (10 * newGamePlusMod);
+				maxWis += (10 * newGamePlusMod);
+				maxLib += (10 * newGamePlusMod);
+				maxSen += (10 * newGamePlusMod);
 			}
 			if (findPerk(PerkLib.JobBeastWarrior) >= 0) {
 				maxStr += (5 * newGamePlusMod);
@@ -9404,43 +9404,43 @@ use namespace CoC;
 			if (findPerk(PerkLib.JobWarlord) >= 0) maxTou += (20 * newGamePlusMod);
 			if (findPerk(PerkLib.JobWarrior) >= 0) maxStr += (5 * newGamePlusMod);
 			if (findPerk(PerkLib.PrestigeJobArcaneArcher) >= 0) {
-				maxSpe += (40 * newGamePlusMod);
-				maxInt += (40 * newGamePlusMod);
-			}
-			if (findPerk(PerkLib.PrestigeJobBerserker) >= 0) {
-				maxStr += (60 * newGamePlusMod);
-				maxTou += (20 * newGamePlusMod);
-			}
-			if (findPerk(PerkLib.PrestigeJobGreySage) >= 0) {
+				maxSpe += (80 * newGamePlusMod);
 				maxInt += (80 * newGamePlusMod);
 			}
+			if (findPerk(PerkLib.PrestigeJobBerserker) >= 0) {
+				maxStr += (120 * newGamePlusMod);
+				maxTou += (40 * newGamePlusMod);
+			}
+			if (findPerk(PerkLib.PrestigeJobGreySage) >= 0) {
+				maxInt += (160 * newGamePlusMod);
+			}
 			if (findPerk(PerkLib.PrestigeJobSeer) >= 0) {
-				maxInt += (60 * newGamePlusMod);
-				maxWis += (20 * newGamePlusMod);
+				maxInt += (160 * newGamePlusMod);
+				maxWis += (40 * newGamePlusMod);
 			}
 			if (findPerk(PerkLib.PrestigeJobSentinel) >= 0) {
-				maxStr += (20 * newGamePlusMod);
-				maxTou += (60 * newGamePlusMod);
+				maxStr += (40 * newGamePlusMod);
+				maxTou += (120 * newGamePlusMod);
 			}
 			if (findPerk(PerkLib.PrestigeJobSoulArcher) >= 0) {
-				maxSpe += (40 * newGamePlusMod);
-				maxWis += (40 * newGamePlusMod);
+				maxSpe += (80 * newGamePlusMod);
+				maxWis += (80 * newGamePlusMod);
 			}
 			if (findPerk(PerkLib.PrestigeJobSoulArtMaster) >= 0) {
-				maxStr += (40 * newGamePlusMod);
-				maxWis += (40 * newGamePlusMod);
+				maxStr += (80 * newGamePlusMod);
+				maxWis += (80 * newGamePlusMod);
 			}
 			if (findPerk(PerkLib.PrestigeJobSpellKnight) >= 0) {
-				maxStr += (40 * newGamePlusMod);
-				maxInt += (40 * newGamePlusMod);
+				maxStr += (80 * newGamePlusMod);
+				maxInt += (80 * newGamePlusMod);
 			}
 			if (findPerk(PerkLib.PrestigeJobTempest) >= 0) {
-				maxStr += (40 * newGamePlusMod);
-				maxSpe += (40 * newGamePlusMod);
+				maxStr += (80 * newGamePlusMod);
+				maxSpe += (80 * newGamePlusMod);
 			}
 			if (findPerk(PerkLib.PrestigeJobWarlock) >= 0) {
-				maxInt += (60 * newGamePlusMod);
-				maxLib += (20 * newGamePlusMod);
+				maxInt += (120 * newGamePlusMod);
+				maxLib += (40 * newGamePlusMod);
 			}
 			if (findPerk(PerkLib.DeityJobMunchkin) >= 0) {
 				maxStr += (25 * newGamePlusMod);
@@ -9448,8 +9448,8 @@ use namespace CoC;
 				maxSpe += (25 * newGamePlusMod);
 				maxInt += (25 * newGamePlusMod);
 				maxWis += (25 * newGamePlusMod);
-				maxLib += (15 * newGamePlusMod);
-				maxSen += (15 * newGamePlusMod);
+				maxLib += (25 * newGamePlusMod);
+				maxSen += (25 * newGamePlusMod);
 			}
 			if (hasPerk(PerkLib.Lycanthropy)) {
 				if (flags[kFLAGS.LUNA_MOON_CYCLE] == 3 || flags[kFLAGS.LUNA_MOON_CYCLE] == 5) {
@@ -10027,7 +10027,7 @@ use namespace CoC;
 		// 0..5 or -1 if no
 		public function roomInExistingStack(itype:ItemType):Number {
 			for (var i:int = 0; i<itemSlots.length; i++){
-				if(itemSlot(i).itype == itype && itemSlot(i).quantity != 0 && itemSlot(i).quantity < 5)
+				if(itemSlot(i).itype == itype && itemSlot(i).quantity != 0 && itemSlot(i).quantity < 99)
 					return i;
 			}
 			return -1;
