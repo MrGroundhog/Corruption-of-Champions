@@ -1,4 +1,4 @@
-﻿//CoC Creature.as
+//CoC Creature.as
 package classes
 {
 import classes.BodyParts.Antennae;
@@ -620,7 +620,7 @@ public class Creature extends Utils
 		}
 		protected function maxHP_mult():Number {
 			var maxHP_mult1:Number = 1;
-			maxHP_mult1 += (countCockSocks("green") * 0.02);
+			maxHP_mult1 += (countCockSocks("green") * 0.025);
 			if (game.player.vehiclesName == "Goblin Mech Alpha") {
 				if (game.player.hasKeyItem("Upgraded Armor plating 1.0") >= 0) maxHP_mult1 += 0.2;
 				if (game.player.hasKeyItem("Upgraded Armor plating 2.0") >= 0) maxHP_mult1 += 0.35;
@@ -2154,23 +2154,23 @@ public class Creature extends Utils
 			var bonus:Number = 0;
 			//Centaurs = +50 capacity
 			if (isTaur())
-				bonus = 50;
+				bonus = 100;
 			//Naga = +20 capacity
 			else if (lowerBody == 3)
-				bonus = 20;
+				bonus = 40;
 			//Wet pussy provides 20 point boost
 			if (findPerk(PerkLib.WetPussy) >= 0)
-				bonus += 20;
-			if (findPerk(PerkLib.HistorySlut) >= 0 || findPerk(PerkLib.PastLifeSlut) >= 0)
-				bonus += 20;
-			if (findPerk(PerkLib.OneTrackMind) >= 0)
-				bonus += 10;
-			if (findPerk(PerkLib.Cornucopia) >= 0)
-				bonus += 30;
-			if(findPerk(PerkLib.FerasBoonWideOpen) >= 0)
-				bonus += 25;
-			if(findPerk(PerkLib.FerasBoonMilkingTwat) >= 0)
 				bonus += 40;
+			if (findPerk(PerkLib.HistorySlut) >= 0 || findPerk(PerkLib.PastLifeSlut) >= 0)
+				bonus += 40;
+			if (findPerk(PerkLib.OneTrackMind) >= 0)
+				bonus += 20;
+			if (findPerk(PerkLib.Cornucopia) >= 0)
+				bonus += 60;
+			if(findPerk(PerkLib.FerasBoonWideOpen) >= 0)
+				bonus += 50;
+			if(findPerk(PerkLib.FerasBoonMilkingTwat) >= 0)
+				bonus += 80;
 			total = (bonus + statusEffectv1(StatusEffects.BonusVCapacity) + 8 * vaginas[0].vaginalLooseness * vaginas[0].vaginalLooseness) * (1 + vaginas[0].vaginalWetness / 10);
 			return total;
 		}
@@ -2180,15 +2180,15 @@ public class Creature extends Utils
 			var bonus:Number = 0;
 			//Centaurs = +30 capacity
 			if (isTaur())
-				bonus = 30;
+				bonus = 60;
 			if (findPerk(PerkLib.HistorySlut) >= 0 || findPerk(PerkLib.PastLifeSlut) >= 0)
-				bonus += 20;
+				bonus += 40;
 			if (findPerk(PerkLib.Cornucopia) >= 0)
-				bonus += 30;
+				bonus += 60;
 			if (findPerk(PerkLib.OneTrackMind) >= 0)
-				bonus += 10;
+				bonus += 20;
 			if (ass.analWetness > 0)
-				bonus += 15;
+				bonus += 30;
 			return ((bonus + statusEffectv1(StatusEffects.BonusACapacity) + 6 * ass.analLooseness * ass.analLooseness) * (1 + ass.analWetness / 10));
 		}
 
@@ -2429,7 +2429,7 @@ public class Creature extends Utils
 			if (flags[kFLAGS.HUNGER_ENABLED] >= 1)
 			{
 				lustCoefficient = (lust + 50) / 5;
-				if (findPerk(PerkLib.PilgrimsBounty) >= 0) lustCoefficient = 30;
+				if (findPerk(PerkLib.PilgrimsBounty) >= 0) lustCoefficient = 60;
 				var percent:Number = 0;
 				percent = lustCoefficient + (hoursSinceCum + 10);
 				if (percent > 100)
@@ -2452,19 +2452,19 @@ public class Creature extends Utils
 			if (findPerk(PerkLib.FertilityMinus) >= 0 && lib < 25)
 				quantity *= 0.7;
 			if (findPerk(PerkLib.MessyOrgasms) >= 0)
-				quantity *= 1.5;
+				quantity *= 2.0;
 			if (findPerk(PerkLib.OneTrackMind) >= 0)
 				quantity *= 1.1;
 			if (findPerk(PerkLib.MinotaurTesticlesFinalForm) >= 0)
 				quantity *= 2.5;
 			if (findPerk(PerkLib.MaraesGiftStud) >= 0)
-				quantity += 350;
+				quantity += 700;
 			if (findPerk(PerkLib.FerasBoonAlpha) >= 0)
-				quantity += 200;
+				quantity += 400;
 			if (findPerk(PerkLib.MagicalVirility) >= 0)
-				quantity += 200 + (perkv1(PerkLib.MagicalVirility) * 100);
+				quantity += 400 + (perkv1(PerkLib.MagicalVirility) * 100);
 			if (findPerk(PerkLib.FerasBoonSeeder) >= 0)
-				quantity += 1000;
+				quantity += 2000;
 			if (findPerk(PerkLib.MinotaurTesticlesEvolved) >= 0)
 				quantity += 200;
 			if (findPerk(PerkLib.ProductivityDrugs) >= 0)
@@ -2508,12 +2508,12 @@ public class Creature extends Utils
 			if (findPerk(PerkLib.BroBody) >= 0) cumCap *= 1.3;
 			if (findPerk(PerkLib.FertilityPlus) >= 0) cumCap *= 1.5;
 			if (findPerk(PerkLib.FertilityMinus) >= 0 && lib < 25) cumCap *= 0.7;
-			if (findPerk(PerkLib.MessyOrgasms) >= 0) cumCap *= 1.5;
+			if (findPerk(PerkLib.MessyOrgasms) >= 0) cumCap *= 2.0;
 			if (findPerk(PerkLib.OneTrackMind) >= 0) cumCap *= 1.1;
-			if (findPerk(PerkLib.MaraesGiftStud) >= 0) cumCap += 350;
-			if (findPerk(PerkLib.FerasBoonAlpha) >= 0) cumCap += 200;
-			if (findPerk(PerkLib.MagicalVirility) >= 0) cumCap += 200;
-			if (findPerk(PerkLib.FerasBoonSeeder) >= 0) cumCap += 1000;
+			if (findPerk(PerkLib.MaraesGiftStud) >= 0) cumCap += 700;
+			if (findPerk(PerkLib.FerasBoonAlpha) >= 0) cumCap += 400;
+			if (findPerk(PerkLib.MagicalVirility) >= 0) cumCap += 400;
+			if (findPerk(PerkLib.FerasBoonSeeder) >= 0) cumCap += 2000;
 			cumCap += perkv1(PerkLib.ElvenBounty);
 			if (findPerk(PerkLib.BroBody) >= 0) cumCap += 200;
 			cumCap += statusEffectv1(StatusEffects.Rut);
@@ -3289,15 +3289,15 @@ public class Creature extends Utils
 			if (inHeat)
 				counter += statusEffectv1(StatusEffects.Heat);
 			if (findPerk(PerkLib.FertilityPlus) >= 0)
-				counter += 15;
-			if (findPerk(PerkLib.FertilityMinus) >= 0 && lib < 25)
-				counter -= 15;
-			if (findPerk(PerkLib.MaraesGiftFertility) >= 0)
-				counter += 50;
-			if (findPerk(PerkLib.FerasBoonBreedingBitch) >= 0)
 				counter += 30;
+			if (findPerk(PerkLib.FertilityMinus) >= 0 && lib < 25)
+				counter -= 30;
+			if (findPerk(PerkLib.MaraesGiftFertility) >= 0)
+				counter += 100;
+			if (findPerk(PerkLib.FerasBoonBreedingBitch) >= 0)
+				counter += 60;
 			if (findPerk(PerkLib.MagicalFertility) >= 0)
-				counter += 10 + (perkv1(PerkLib.MagicalFertility) * 5);
+				counter += 20 + (perkv1(PerkLib.MagicalFertility) * 5);
 			counter += perkv2(PerkLib.ElvenBounty);
 			counter += perkv1(PerkLib.PiercedFertite);
 			if (jewelryEffectId == JewelryLib.MODIFIER_FERTILITY)
@@ -4040,7 +4040,7 @@ public class Creature extends Utils
 				if (findPerk(PerkLib.ElvishPeripheralNervSysEvolved) >= 0) chance += 10;
 				if (findPerk(PerkLib.ElvishPeripheralNervSysFinalForm) >= 0) chance += 15;
 			}
-			if (findPerk(PerkLib.Flexibility) >= 0) chance += 6;
+			if (findPerk(PerkLib.Flexibility) >= 0) chance += 10;
 			if (findPerk(PerkLib.Misdirection) >= 0 && armorName == "red, high-society bodysuit") chance += 10;
 			//if (findPerk(PerkLib.Unhindered) >= 0 && meetUnhinderedReq()) chance += 10;
 			if (findPerk(PerkLib.Unhindered) >= 0 && (game.player.armorName == "arcane bangles" || game.player.armorName == "practically indecent steel armor" || game.player.armorName == "revealing chainmail bikini" || game.player.armorName == "slutty swimwear" || game.player.armorName == "barely-decent bondage straps" || game.player.armorName == "nothing")) chance += 10;
