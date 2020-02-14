@@ -124,7 +124,7 @@ import classes.internals.ChainedDrop;
 			this.temperment = TEMPERMENT_RANDOM_GRAPPLES;
 			this.level = 24;
 			this.gems = rand(20) + 40;
-			this.drop = new ChainedDrop().add(useables.EBONBLO,1/20)
+			this.drop = new ChainedDrop().add(useables.EBONBLO,1/10)
 					.elseDrop(consumables.REPTLUM);
 			this.tailType = Tail.COW;
 			this.tailRecharge = 0;
