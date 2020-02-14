@@ -29,7 +29,7 @@ public class CorruptedGlade extends BaseContent implements TimeAwareInterface {
 		public function intro():void {
 			spriteSelect(92);
 			outputText("Walking through the woods, you find a damp patch overgrown with corrupted plant-life.  Every flower seems warped into a colorful imitation of a female's genitals, each vine appears throbbing and veiny, and every knot on the nearby trees is capped with a nipple-like protrusion, leaking dark sap.");
-			if (player.cor <= 33) { //disgusted reaction
+			if (player.cor <= 33 || player.lust <= 40) { //disgusted reaction
 				//Get plant-cum dripped on you if not fast and unlucky!
 				if (player.spe < 60 && rand(player.spe + 50) < 50) {
 					outputText("  Disgusted by this perversion of nature, you turn to leave, catching a faceful of the white goop that's spurting down from the vines above!  It's slimy, gross, and difficult to clear from your eyes, nose, and mouth.  The musky smell and delicious salty flavor are undoubtedly a result of the plant's corruption.  You escape the tainted glade, but feel warmer and warmer as time passes...");
@@ -43,7 +43,7 @@ public class CorruptedGlade extends BaseContent implements TimeAwareInterface {
 				doNext(camp.returnToCampUseOneHour);
 				addButton(1, "Destroy Them", destroyTheCorruptedGladesChoice).hint("Attempt to destroy the perverted glade.");
 			}
-			else if (player.cor <= 66) { //intrigued reaction
+			else if (player.cor <= 66 || player.lust <= 80) { //intrigued reaction
 				outputText("  You explore the glade with equal parts caution and curiosity.  ");
 				switch(rand(3)) {
 					case  0: //flowers...
@@ -55,7 +55,7 @@ public class CorruptedGlade extends BaseContent implements TimeAwareInterface {
 					default: //trees...
 						outputText("A cluster of huge breast-like knots on a nearby tree draws your attention.  Unable to resist, you poke one, and burst into giggles as it jiggles like a real breast!  You cautiously begin groping the tree-tit, and smile as it begins leaking sweet-smelling sap.  The scent conjures memories of helping to make maple syrup back home, and before you realize it, you've gathered a drop of the sap on your finger and tasted it.  It's powerfully sweet, making your tongue tingle and heart beat faster.  Unbidden, the thought of suckling the teat dry of its sweet treat comes to mind, but you manage to reject it and stumble away from the corrupted glade.  You have trouble with your tongue for the next hour: it won't stay in your mouth, and keeps licking your lips, seeking any leftover sweetness.  It almost distracts you from the palpable heat gathering between your thighs.");
 				}
-				dynStats("lus", 20 + player.lib / 5, "cor", .5);
+				dynStats("lus", 20 + player.lib / 5);
 				doNext(camp.returnToCampUseOneHour);
 				addButton(1, "Destroy Them", destroyTheCorruptedGladesChoice).hint("Attempt to destroy the perverted glade.");
 			}
@@ -126,7 +126,7 @@ public class CorruptedGlade extends BaseContent implements TimeAwareInterface {
 				outputText("You walk away, your lips and tongue feeling slightly puffy and sensitive, but none the worse for the wear.");
 				player.slimeFeed();
 				player.orgasm();
-				dynStats("sen", 4, "cor", 1);
+				dynStats("sen", 4);
 			}
 			doNext(camp.returnToCampUseOneHour);
 		}
@@ -187,7 +187,7 @@ public class CorruptedGlade extends BaseContent implements TimeAwareInterface {
 				outputText("An hour or two later, you wake feeling very sore, but satisfied.  The vine must have popped free at some point and the bulb now rests on your pussy lips.  You go to brush it off and nearly orgasm from touching your nether-lips, still sensitive and parted from the overlarge tentacle they so recently took.  A rush of white goop escapes from between your thighs as you stand, soaking back into the soil immediately.   A quick stretch later, you don your gear and head back to camp with a smile.\n\n");
 				//Normal stat changes
 				player.orgasm();
-				dynStats("sen", 5, "cor", 2);
+				dynStats("sen", 5);
 				//Xforms
 				if (rand(3) == 0 && player.hairColor != "green") { //Change hair to green sometimes
 					outputText("You don't get far before you realize all the hair on your body has shifted to a verdant green color.  <b>You now have green hair.</b>  ");
@@ -220,7 +220,7 @@ public class CorruptedGlade extends BaseContent implements TimeAwareInterface {
 				//Finish sentance
 				outputText(" tingle.  ");
 				//Simple stat changes - + lust.
-				dynStats("lus", 25 + player.lib / 10, "cor", 2);
+				dynStats("lus", 25 + player.lib / 10);
 				//Change hair to green sometimes
 				if (rand(3) == 0 && player.hairColor != "green") {
 					outputText("You don't get far before you realize all the hair on your body has shifted to a verdant green color.  <b>You now have green hair.</b>  ");
@@ -256,7 +256,7 @@ public class CorruptedGlade extends BaseContent implements TimeAwareInterface {
 			outputText("Stepping carefully around the other hazards of the glade, you close on the strange trees with equal parts curiosity and desire.  Up close, it's easy to see the strange growths that sprout from the bark – dozens of full ripe-looking breasts, each capped with a swollen and leaking nipple.  You touch one, marveling at the smooth texture of its chocolate-colored skin.   In response a runner of sap oozes free of the nipple and slides down the curved surface.\n\n");
 			outputText("You lean forwards and lick around the nipple's surface, sampling the sweetness of the trickling sap.   The stuff nearly overpowers you with a taste like syrupy cream as more sap drips free of the fully-erect tree-nipple.  Unable to resist testing this nonsensical oddity, you engulf the entire nipple between your lips, suckling hard.   The tree seems to oblige your efforts with a fresh discharge of the sticky sap.   Your tongue tingles and vibrates with the sinfully sweet taste in your mouth, dancing in circles around the nipple, coaxing yet more nectar from swollen plant-jug.  It's easy to lose yourself in that taste, falling into a rhythm of alternatively sucking, swallowing, and licking.\n\n");
 			outputText("In time you realize the breast has long since been emptied by your hungry mouth, and you pull free with a pop, letting your tongue run over your now over-sensitive lips.  It seems your entire mouth has been affected by the tree's sap, and is now as sensitive and receptive as a maiden's box.  You don't think you could drink any more sap with how full you feel, and you make ready to depart this perverted place.");
-			dynStats("sen", 1, "lus", 15, "cor", .5);
+			dynStats("sen", 1, "lus", 15);
 			player.slimeFeed();
 			if (!player.hasStatusEffect(StatusEffects.LustyTongue)) {
 				if (rand(4) == 0) { //25% Chance of sensitive mouth status – increased lust gain/hour due to licking your lips :3
@@ -333,7 +333,7 @@ public class CorruptedGlade extends BaseContent implements TimeAwareInterface {
 				case 3: //Axe
 					outputText("You grab an axe from your toolbox and hack away at the plants without mercy. Eventually, you manage to chop down every perverted plant in the glade save for some of the trees. They gradually wither away. ");
 					outputText("Finally, you chop down the trees with all your strength, making wedge-shaped cuts. With one last almighty swing, the tree falls and lands on the ground with a loud THUD. It looks like they would make fine wood. You chop the tree into several pieces and haul the wood to your camp. ");
-					camp.cabinProgress.incrementWoodSupply(10);
+					camp.cabinProgress.incrementWoodSupply(5 + Math.floor(player.str / 10));
 					fatigue(30 - (player.str / 10));
 					outputText("\n\n");
 					break;
