@@ -137,9 +137,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForFactory():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 2 perk points and 10 stat points</b>");
-			player.perkPoints = player.perkPoints + 2;
-			player.statPoints = player.statPoints + 10;
+			outputText("<b>Gained 4 perk points and 20 stat points</b>");
+			player.perkPoints = player.perkPoints + 4;
+			player.statPoints = player.statPoints + 20;
 			statScreenRefresh();
 			flags[kFLAGS.FACTORY_OMNIBUS_DEFEATED] = 2;
 			doNext(accessQuestlogMainMenu);
@@ -147,9 +147,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForDeepCave():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 4 perk points and 20 stat points</b>");
-			player.perkPoints = player.perkPoints + 4;
-			player.statPoints = player.statPoints + 20;
+			outputText("<b>Gained 8 perk points and 40 stat points</b>");
+			player.perkPoints = player.perkPoints + 8;
+			player.statPoints = player.statPoints + 40;
 			statScreenRefresh();
 			flags[kFLAGS.DEFEATED_ZETAZ] = 2;
 			doNext(accessQuestlogMainMenu);
@@ -157,9 +157,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForStronghold():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 6 perk points and 30 stat points</b>");
-			player.perkPoints = player.perkPoints + 6;
-			player.statPoints = player.statPoints + 30;
+			outputText("<b>Gained 12 perk points and 60 stat points</b>");
+			player.perkPoints = player.perkPoints + 12;
+			player.statPoints = player.statPoints + 60;
 			statScreenRefresh();
 			flags[kFLAGS.LETHICE_DEFEATED] = 2;
 			doNext(accessQuestlogMainMenu);
@@ -167,9 +167,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForSandCave():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 1 perk point and 5 stat points</b>");
-			player.perkPoints = player.perkPoints + 1;
-			player.statPoints = player.statPoints + 5;
+			outputText("<b>Gained 2 perk point and 10 stat points</b>");
+			player.perkPoints = player.perkPoints + 2;
+			player.statPoints = player.statPoints + 10;
 			statScreenRefresh();
 			flags[kFLAGS.DISCOVERED_WITCH_DUNGEON] = 2;
 			doNext(accessQuestlogMainMenu);
@@ -177,9 +177,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForPhoenixTower():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 2 perk points and 10 stat points</b>");
-			player.perkPoints = player.perkPoints + 2;
-			player.statPoints = player.statPoints + 10;
+			outputText("<b>Gained 4 perk points and 20 stat points</b>");
+			player.perkPoints = player.perkPoints + 4;
+			player.statPoints = player.statPoints + 20;
 			statScreenRefresh();
 			flags[kFLAGS.CLEARED_HEL_TOWER] = 2;
 			doNext(accessQuestlogMainMenu);
@@ -187,9 +187,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForRiverDungeon1stFloor():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 1 perk point and 5 stat points</b>");
-			player.perkPoints = player.perkPoints + 1;
-			player.statPoints = player.statPoints + 5;
+			outputText("<b>Gained 2 perk point and 10 stat points</b>");
+			player.perkPoints = player.perkPoints + 2;
+			player.statPoints = player.statPoints + 10;
 			statScreenRefresh();
 			player.createStatusEffect(StatusEffects.RiverDungeonFloorRewards,1,0,0,0);
 			doNext(accessQuestlogMainMenu);
@@ -197,9 +197,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForRiverDungeon2ndFloor():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 2 perk points and 10 stat points</b>");
-			player.perkPoints = player.perkPoints + 2;
-			player.statPoints = player.statPoints + 10;
+			outputText("<b>Gained 4 perk points and 20 stat points</b>");
+			player.perkPoints = player.perkPoints + 4;
+			player.statPoints = player.statPoints + 20;
 			statScreenRefresh();
 			player.addStatusValue(StatusEffects.RiverDungeonFloorRewards,1,1);
 			doNext(accessQuestlogMainMenu);
@@ -207,9 +207,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForEbonLabyrinth():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 2 perk points and 10 stat points</b>");
-			player.perkPoints = player.perkPoints + 2;
-			player.statPoints = player.statPoints + 10;
+			outputText("<b>Gained 4 perk points and 20 stat points</b>");
+			player.perkPoints = player.perkPoints + 4;
+			player.statPoints = player.statPoints + 20;
 			statScreenRefresh();
 			flags[kFLAGS.EBON_LABYRINTH] = 3;
 			doNext(accessQuestlogMainMenu);
@@ -217,9 +217,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForHiddenCave():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 1 perk point and 5 stat points</b>");
-			player.perkPoints = player.perkPoints + 1;
-			player.statPoints = player.statPoints + 5;
+			outputText("<b>Gained 2 perk point and 10 stat points</b>");
+			player.perkPoints = player.perkPoints + 2;
+			player.statPoints = player.statPoints + 10;
 			statScreenRefresh();
 			flags[kFLAGS.HIDDEN_CAVE_LOLI_BAT_GOLEMS] = 6;
 			doNext(accessQuestlogMainMenu);
@@ -227,9 +227,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForHiddenCaveHiddenStage():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 1 perk point and 5 stat points</b>");
-			player.perkPoints = player.perkPoints + 1;
-			player.statPoints = player.statPoints + 5;
+			outputText("<b>Gained 2 perk point and 10 stat points</b>");
+			player.perkPoints = player.perkPoints + 2;
+			player.statPoints = player.statPoints + 10;
 			statScreenRefresh();
 			flags[kFLAGS.HIDDEN_CAVE_BOSSES] = 3;
 			doNext(accessQuestlogMainMenu);
@@ -237,9 +237,9 @@ public class Questlog extends BaseContent
 		public function takeRewardForDenOfDesire():void {
 			clearOutput();
 			outputText("Your contribution in changing Mareth have been noticed.\n\n");
-			outputText("<b>Gained 3 perk points and 15 stat points</b>");
-			player.perkPoints = player.perkPoints + 3;
-			player.statPoints = player.statPoints + 15;
+			outputText("<b>Gained 6 perk points and 30 stat points</b>");
+			player.perkPoints = player.perkPoints + 6;
+			player.statPoints = player.statPoints + 30;
 			statScreenRefresh();
 			flags[kFLAGS.DEN_OF_DESIRE_QUEST] = 2;
 			doNext(accessQuestlogMainMenu);
