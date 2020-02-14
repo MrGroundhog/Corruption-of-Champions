@@ -1,4 +1,4 @@
-﻿package classes 
+package classes 
 {
 import classes.BodyParts.Antennae;
 import classes.BodyParts.Arms;
@@ -46,7 +46,7 @@ import coc.view.MainView;
 		public const MAX_FURY_LEVEL:int = 25;					//90 AP
 		public const MAX_MYSTICALITY_LEVEL:int = 20;			//90 AP
 		public const MAX_SPIRITUALENLIGHTENMENT_LEVEL:int = 20;	//90 AP
-		public const MAX_WISDOM_LEVEL:int = 5;					//15 AP
+		public const MAX_WISDOM_LEVEL:int = -1;					//No maximum level.(845)
 		public const MAX_TRANSHUMANISM_LEVEL:int = 25;			//90 AP
 		public const MAX_FORTUNE_LEVEL:int = -1;				//No maximum level.(845)
 		public const MAX_VIRILITY_LEVEL:int = 10;				//40 AP
@@ -538,8 +538,8 @@ import coc.view.MainView;
 		private function isAMan():void {
 			//Attributes
 			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] == 0) {
-				player.str += 3;
-				player.tou += 2;
+				player.str += 5;
+				player.tou += 5;
 			}
 			//Body attributes
 			player.fertility = 5;
@@ -569,8 +569,8 @@ import coc.view.MainView;
 		private function isAWoman():void {
 			//Attributes
 			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] == 0) {
-				player.spe += 3;
-				player.inte += 2;
+				player.spe += 5;
+				player.inte += 5;
 			}
 			//Body attributes
 			player.fertility = 10;
@@ -596,10 +596,10 @@ import coc.view.MainView;
 		private function isAHerm():void {
 			//Attributes
 			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] == 0) {
-				player.str+=1;
-				player.tou+=1;
-				player.spe+=1;
-				player.inte+= 1;
+				player.str+=2;
+				player.tou+=2;
+				player.spe+=2;
+				player.inte+= 2;
 			}
 			//Body attributes
 			player.fertility = 10;
@@ -634,8 +634,8 @@ import coc.view.MainView;
 		
 		
 		private function buildLeanMale():void {
-			player.str -= 1;
-			player.spe += 1;
+			player.str -= 2;
+			player.spe += 2;
 			
 			player.femininity = 34;
 			player.thickness = 30;
@@ -648,8 +648,8 @@ import coc.view.MainView;
 		}
 
 		private function buildSlenderFemale():void {
-			player.str -= 1;
-			player.spe += 1;
+			player.str -= 2;
+			player.spe += 2;
 			
 			player.femininity = 66;
 			player.thickness = 30;
@@ -682,7 +682,7 @@ import coc.view.MainView;
 		}
 
 		private function buildThickMale():void {
-			player.spe -= 4;
+			player.spe -= 5;
 			player.str += 2;
 			player.tou += 2;
 			
@@ -697,9 +697,9 @@ import coc.view.MainView;
 		}
 
 		private function buildCurvyFemale():void {
-			player.spe -= 2;
-			player.str += 1;
-			player.tou += 1;
+			player.spe -= 5;
+			player.str += 2;
+			player.tou += 2;
 			
 			player.femininity = 71;
 			player.thickness = 70;
@@ -725,8 +725,8 @@ import coc.view.MainView;
 		}
 
 		private function buildTomboyishFemale():void {
-			player.str += 1;
-			player.spe -= 1;
+			player.str += 2;
+			player.spe -= 2;
 			
 			player.femininity = 56;
 			player.thickness = 50;
@@ -1048,12 +1048,12 @@ import coc.view.MainView;
 			clearOutput();
 			outputText("You can choose a breast size. Breast size may be altered later in the game.");
 			menu();
-			if (player.femininity < 50) addButton(0, "Flat", chooseBreastSize, 0);
-			if (player.femininity < 60) addButton(1, "A-cup", chooseBreastSize, 1);
+			if (player.femininity >= 40) addButton(0, "Flat", chooseBreastSize, 0);
+			if (player.femininity >= 40) addButton(1, "A-cup", chooseBreastSize, 1);
 			if (player.femininity >= 40) addButton(2, "B-cup", chooseBreastSize, 2);
-			if (player.femininity >= 50) addButton(3, "C-cup", chooseBreastSize, 3);
-			if (player.femininity >= 60) addButton(4, "D-cup", chooseBreastSize, 4);
-			if (player.femininity >= 70) addButton(5, "DD-cup", chooseBreastSize, 5);
+			if (player.femininity >= 40) addButton(3, "C-cup", chooseBreastSize, 3);
+			if (player.femininity >= 40) addButton(4, "D-cup", chooseBreastSize, 4);
+			if (player.femininity >= 40) addButton(5, "DD-cup", chooseBreastSize, 5);
 			addButton(14, "Back", genericStyleCustomizeMenu);
 		}
 		private function chooseBreastSize(size:int):void {
@@ -1211,58 +1211,58 @@ import coc.view.MainView;
 		}
 
 		private function setEndowmentStrength():void {
-			player.str += 5;
+			player.str += 10;
 			player.tone += 7;
 			player.thickness += 3;
 			//Add bonus +25% strength gain
-			if (player.findPerk(PerkLib.Strong) < 0) player.createPerk(PerkLib.Strong, 0.25, 0, 0, 0);
+			if (player.findPerk(PerkLib.Strong) < 0) player.createPerk(PerkLib.Strong, 1.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentToughness():void {
-			player.tou += 5;
+			player.tou += 10;
 			player.tone += 5;
 			player.thickness += 5;
-			if (player.findPerk(PerkLib.Tough) < 0) player.createPerk(PerkLib.Tough, 0.25, 0, 0, 0);
+			if (player.findPerk(PerkLib.Tough) < 0) player.createPerk(PerkLib.Tough, 1.0, 0, 0, 0);
 			player.HP = EngineCore.maxHP();
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentSpeed():void {
-			player.spe += 5;
+			player.spe += 10;
 			player.tone += 10;
-			if (player.findPerk(PerkLib.Fast) < 0) player.createPerk(PerkLib.Fast, 0.25, 0, 0, 0);
+			if (player.findPerk(PerkLib.Fast) < 0) player.createPerk(PerkLib.Fast, 1.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentSmarts():void {
-			player.inte += 5;
+			player.inte += 10;
 			player.thickness -= 5;
-			if (player.findPerk(PerkLib.Smart) < 0) player.createPerk(PerkLib.Smart, 0.25, 0, 0, 0);
+			if (player.findPerk(PerkLib.Smart) < 0) player.createPerk(PerkLib.Smart, 1.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentWise():void {
-			player.wis += 5;
-			if (player.findPerk(PerkLib.Wise) < 0) player.createPerk(PerkLib.Wise, 0.25, 0, 0, 0);
+			player.wis += 10;
+			if (player.findPerk(PerkLib.Wise) < 0) player.createPerk(PerkLib.Wise, 1.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentLibido():void {
-			player.lib += 5;
-			if (player.findPerk(PerkLib.Lusty) < 0) player.createPerk(PerkLib.Lusty, 0.25, 0, 0, 0);
+			player.lib += 10;
+			if (player.findPerk(PerkLib.Lusty) < 0) player.createPerk(PerkLib.Lusty, 1.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentTouch():void {
-			player.sens += 5;
-			if (player.findPerk(PerkLib.Sensitive) < 0) player.createPerk(PerkLib.Sensitive, 0.25, 0, 0, 0);
+			player.sens += 10;
+			if (player.findPerk(PerkLib.Sensitive) < 0) player.createPerk(PerkLib.Sensitive, 1.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentPerversion():void {
-			player.cor += 5;
-			if (player.findPerk(PerkLib.Pervert) < 0) player.createPerk(PerkLib.Pervert, 0.25, 0, 0, 0);
+			player.cor += 10;
+			if (player.findPerk(PerkLib.Pervert) < 0) player.createPerk(PerkLib.Pervert, 1.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
@@ -1271,28 +1271,28 @@ import coc.view.MainView;
 			player.cocks[0].cockLength = 8;
 			player.cocks[0].cockThickness = 1.5;
 			trace("Creation - cock modded to 8inches");
-			if (player.findPerk(PerkLib.BigCock) < 0) player.createPerk(PerkLib.BigCock, 1.25, 0, 0, 0);
+			if (player.findPerk(PerkLib.BigCock) < 0) player.createPerk(PerkLib.BigCock, 2.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentMessyOrgasms():void {
 			player.femininity -= 2;
-			player.cumMultiplier = 1.5;
-			if (player.findPerk(PerkLib.MessyOrgasms) < 0) player.createPerk(PerkLib.MessyOrgasms, 1.25, 0, 0, 0);
+			player.cumMultiplier = 2.0;
+			if (player.findPerk(PerkLib.MessyOrgasms) < 0) player.createPerk(PerkLib.MessyOrgasms, 2.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentBigBreasts():void {
 			player.femininity += 5;
 			player.breastRows[0].breastRating += 2;
-			if (player.findPerk(PerkLib.BigTits) < 0) player.createPerk(PerkLib.BigTits, 1.5, 0, 0, 0);
+			if (player.findPerk(PerkLib.BigTits) < 0) player.createPerk(PerkLib.BigTits, 2.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
 		private function setEndowmentBigClit():void {
 			player.femininity -= 5;
 			player.clitLength = 1;
-			if (player.findPerk(PerkLib.BigClit) < 0) player.createPerk(PerkLib.BigClit, 1.25, 0, 0, 0);
+			if (player.findPerk(PerkLib.BigClit) < 0) player.createPerk(PerkLib.BigClit, 2.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
@@ -1300,7 +1300,7 @@ import coc.view.MainView;
 			player.femininity += 5;
 			player.fertility += 25;
 			player.hips.type += 2;
-			if (player.findPerk(PerkLib.Fertile) < 0) player.createPerk(PerkLib.Fertile, 1.5, 0, 0, 0);
+			if (player.findPerk(PerkLib.Fertile) < 0) player.createPerk(PerkLib.Fertile, 2.0, 0, 0, 0);
 			chooseBloodlineorNot();
 		}
 		
@@ -1417,16 +1417,16 @@ import coc.view.MainView;
 					outputText("You spent some time as an alchemist's assistant, and alchemical items always seem to be more reactive in your hands.  Is this your history?");
 					break;
 				case PerkLib.HistoryCultivator:
-					outputText("You spent much of your time cultivating your soul, reaching the point where you succesfully took the first step towards spiritual enlightment as well as attaining an uncanny purity of soulforce. You will start with Job: Soul Cultivator perk. Your max soulforce will be roughly 10% higher. Is this your history?");
+					outputText("You spent much of your time cultivating your soul, reaching the point where you succesfully took the first step towards spiritual enlightment as well as attaining an uncanny purity of soulforce. You will start with Job: Soul Cultivator perk. Your max soulforce will be roughly 25% higher. Is this your history?");
 					break;
 				case PerkLib.HistoryFighter:
-					outputText("You spent much of your time fighting other children, and you had plans to find work as a guard when you grew up.  You do 10% more damage with physical melee attacks.  You will also start out with 50 gems and Job: Warrior perk.  Is this your history?");
+					outputText("You spent much of your time fighting other children, and you had plans to find work as a guard when you grew up.  You do 25% more damage with physical melee attacks.  You will also start out with 50 gems and Job: Warrior perk.  Is this your history?");
 					break;
 				case PerkLib.HistoryFortune:
-					outputText("You always feel lucky when it comes to fortune.  Because of that, you have always managed to save up gems until whatever's needed and how to make the most out it (+15% gems on victory).  You will also start out with 250 gems.  Is this your history?");
+					outputText("You always feel lucky when it comes to fortune.  Because of that, you have always managed to save up gems until whatever's needed and how to make the most out it (+50% gems on victory).  You will also start out with 250 gems.  Is this your history?");
 					break;
 				case PerkLib.HistoryHealer:
-					outputText("You often spent your free time with the village healer, learning how to tend to wounds.  Healing items and effects are 20% more effective.  Is this your history?");
+					outputText("You often spent your free time with the village healer, learning how to tend to wounds.  Healing items and effects are 25% more effective.  Is this your history?");
 					break;
 				case PerkLib.HistoryReligious:
 					outputText("You spent a lot of time at the village temple, and learned how to meditate.  The 'masturbation' option is replaced with 'meditate' when corruption is at or below 66.  Is this your history?");
@@ -1435,7 +1435,7 @@ import coc.view.MainView;
 					outputText("You spent much of your time in school, and even begged the richest man in town, Mr. " + (silly() ? "Savin" : "Sellet") + ", to let you read some of his books.  You are much better at focusing, spellcasting uses 20% less mana and will start with Job: Sorcerer perk.  Is this your history?");
 					break;
 				case PerkLib.HistoryScout:
-					outputText("You spent much of your time learning use range weapons, and you had plans to find work as a hunter when you grew up.  You do 10% more damage with physical range attacks and +20% accuracy.  You will also start out with 50 gems and Job: Ranger perk.  Is this your history?");
+					outputText("You spent much of your time learning use range weapons, and you had plans to find work as a hunter when you grew up.  You do 25% more damage with physical range attacks and +25% accuracy.  You will also start out with 50 gems and Job: Ranger perk.  Is this your history?");
 					break;
 				case PerkLib.HistorySlacker:
 					outputText("You spent a lot of time slacking, avoiding work, and otherwise making a nuisance of yourself.  Your efforts at slacking have made you quite adept at resting, and your fatigue comes back 20% faster.  Is this your history?");
@@ -1450,7 +1450,7 @@ import coc.view.MainView;
 					outputText("You were being groomed to take over the elderly chief's position until you were chosen as the Champion.  You will start with Job: Leader perk.  Is this your history?");
 					break;
 				default:
-					outputText("You managed to find work as a whore.  Because of your time spent trading seduction for profit, you're more effective at teasing (+15% tease damage).  You will start with Job: Seducer perk.  Is this your history?");
+					outputText("You managed to find work as a whore.  Because of your time spent trading seduction for profit, you're more effective at teasing (+25% tease damage).  You will start with Job: Seducer perk.  Is this your history?");
 			}
 			menu();
 			addButton(0, "Yes", setHistory, choice);
@@ -1707,7 +1707,7 @@ import coc.view.MainView;
 				player.createPerk(PerkLib.GeneticMemory, 0, 0, 0, 0);
 				player.createPerk(PerkLib.Metamorph, 0, 0, 0, 0);
 			}
-			player.perkPoints += 1;
+			player.perkPoints += 2;
 			clearOutput();
 			statScreenRefresh();
 			outputText("Would you like to play through the " + (1 * (1 + player.newGamePlusMod())) + "-day");
@@ -1792,10 +1792,10 @@ import coc.view.MainView;
 		}
 		private function maxRankValue():Number {
 			var maxV:Number = 0;
-			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 1) maxV += 5;
-			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 2) maxV += 5;
-			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 3) maxV += 5;
-			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 4) maxV += 5;
+			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 1) maxV += 10;
+			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 2) maxV += 10;
+			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 3) maxV += 10;
+			if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 4) maxV += 10;
 			//if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 5) maxV += 5;
 			//if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 6) maxV += 5;
 			//if (flags[kFLAGS.NEW_GAME_PLUS_LEVEL] >= 7) maxV += 5;
