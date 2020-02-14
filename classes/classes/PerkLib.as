@@ -25,21 +25,21 @@ public class PerkLib
 */
 		// Player creation perks
 		public static const Fast:PerkType = mk("Fast", "Fast",
-				"Gains speed 25% faster.", null, true);
+				"Gains speed 100% faster.", null, true);
 		public static const Lusty:PerkType = mk("Lusty", "Lusty",
-				"Gains lust 25% faster.", null, true);
+				"Gains lust 100% faster.", null, true);
 		public static const Pervert:PerkType = mk("Pervert", "Pervert",
-				"Gains corruption 25% faster. Reduces corruption requirement for high-corruption variant of scenes.", null, true);
+				"Gains corruption 100% faster. Reduces corruption requirement for high-corruption variant of scenes.", null, true);
 		public static const Sensitive:PerkType = mk("Sensitive", "Sensitive",
-				"Gains sensitivity 25% faster.", null, true);
+				"Gains sensitivity 100% faster.", null, true);
 		public static const Wise:PerkType = mk("Wise", "Wise",
-				"Gains wisdom 25% faster.", null, true);
+				"Gains wisdom 100% faster.", null, true);
 		public static const Smart:PerkType = mk("Smart", "Smart",
-				"Gains intelligence 25% faster.", null, true);
+				"Gains intelligence 100% faster.", null, true);
 		public static const Strong:PerkType = mk("Strong", "Strong",
-				"Gains strength 25% faster.", null, true);
+				"Gains strength 100% faster.", null, true);
 		public static const Tough:PerkType = mk("Tough", "Tough",
-				"Gains toughness 25% faster.", null, true);
+				"Gains toughness 100% faster.", null, true);
 		// Female creation perks
 		public static const BigClit:PerkType = mk("Big Clit", "Big Clit",
 				"Allows your clit to grow larger more easily and faster.", null, true);
@@ -51,9 +51,9 @@ public class PerkLib
 				"Keeps your pussy wet and provides a bonus to capacity.", null, true);
 		// Male creation perks
 		public static const BigCock:PerkType = mk("Big Cock", "Big Cock",
-				"Gains cock size 25% faster and with less limitations.", null, true);
+				"Gains cock size 100% faster and with less limitations.", null, true);
 		public static const MessyOrgasms:PerkType = mk("Messy Orgasms", "Messy Orgasms",
-				"Produces 50% more cum volume.", null, true);
+				"Produces 100% more cum volume.", null, true);
 				
 		// Ascension perks
 		public static const AscensionCumHose:AscensionCumHosePerk = new AscensionCumHosePerk();
@@ -176,25 +176,25 @@ public class PerkLib
 		public static const PastLifeCultivator:PerkType = mk("Past Life: Cultivator", "Past Life: Cultivator",
 				"Soulforce is easier to kept giving you 10% increase to it maximum amount.", null, true);
 		public static const HistoryFighter:PerkType = mk("History: Fighter", "History: Fighter",
-				"A Past full of conflict increases physical melee damage dealt by 10% and acc by 10%.");
+				"A Past full of conflict increases physical melee damage dealt by 25% and acc by 25%.");
 		public static const PastLifeFighter:PerkType = mk("Past Life: Fighter", "Past Life: Fighter",
-				"A Past full of conflict increases physical melee damage dealt by 10% and acc by 10%.", null, true);
+				"A Past full of conflict increases physical melee damage dealt by 25% and acc by 25%.", null, true);
 		public static const HistoryFortune:PerkType = mk("History: Fortune", "History: Fortune",
-				"Your luck and skills at gathering currency allows you to get 15% more gems from victories.");
+				"Your luck and skills at gathering currency allows you to get 50% more gems from victories.");
 		public static const PastLifeFortune:PerkType = mk("Past Life: Fortune", "Past Life: Fortune",
-				"Your luck and skills at gathering currency allows you to get 15% more gems from victories.", null, true);
+				"Your luck and skills at gathering currency allows you to get 50% more gems from victories.", null, true);
 		public static const HistoryHealer:PerkType = mk("History: Healer", "History: Healer",
-				"Healing experience increases HP gains by 20%.");
+				"Healing experience increases HP gains by 25%.");
 		public static const PastLifeHealer:PerkType = mk("Past Life: Healer", "Past Life: Healer",
-				"Healing experience increases HP gains by 20%.", null, true);
+				"Healing experience increases HP gains by 25%.", null, true);
 		public static const HistoryReligious:PerkType = mk("History: Religious", "History: Religious",
 				"Replaces masturbate with meditate when corruption less than or equal to 66. Reduces minimum libido slightly.");
 		public static const PastLifeReligious:PerkType = mk("Past Life: Religious", "Past Life: Religious",
 				"Replaces masturbate with meditate when corruption less than or equal to 66. Reduces minimum libido slightly.", null, true);
 		public static const HistoryScholar:PerkType = mk("History: Scholar", "History: Scholar",
-				"Time spent focusing your mind makes spellcasting use 20% less mana.");
+				"Time spent focusing your mind makes spellcasting use 25% less mana.");
 		public static const PastLifeScholar:PerkType = mk("Past Life: Scholar", "Past Life: Scholar",
-				"Time spent focusing your mind makes spellcasting use 20% less mana.", null, true);
+				"Time spent focusing your mind makes spellcasting use 25% less mana.", null, true);
 		public static const HistoryScout:PerkType = mk("History: Scout", "History: Scout",
 				"A past full of archery training increases physical range damage dealt by 10% and acc by 20%.");
 		public static const PastLifeScout:PerkType = mk("Past Life: Scout", "Past Life: Scout",
