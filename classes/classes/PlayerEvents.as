@@ -68,8 +68,8 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 			if (flags[kFLAGS.HUNGER_ENABLED] <= 0 || (flags[kFLAGS.HUNGER_ENABLED] > 0 && player.hunger >= 10)) { //If you're starving, your cum won't build up over time.
 				player.hoursSinceCum++;
 				//Super cumbuilding activate!
-				if (player.findPerk(PerkLib.MaraesGiftProfractory) >= 0) player.hoursSinceCum += 2;
-				if (player.findPerk(PerkLib.FerasBoonAlpha) >= 0) player.hoursSinceCum += 2;
+				if (player.findPerk(PerkLib.MaraesGiftProfractory) >= 0) player.hoursSinceCum += 10;
+				if (player.findPerk(PerkLib.FerasBoonAlpha) >= 0) player.hoursSinceCum += 10;
 			}
 			//Normal
 			if (player.findPerk(PerkLib.WellAdjusted) < 0) {
@@ -303,11 +303,13 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 						if (player.vaginas[0].vaginalLooseness == VaginaClass.LOOSENESS_LOOSE && player.statusEffectv1(StatusEffects.CuntStretched) >= 200) {
 							outputText("\nYour " + Appearance.vaginaDescript(player,0) + " recovers from your ordeals, tightening up a bit.\n");
 							player.vaginas[0].vaginalLooseness--;
+							player.vaginas[0].vaginalLooseness--;
 							player.changeStatusValue(StatusEffects.CuntStretched, 1, 0);
 							needNext = true;
 						}
 						if (player.vaginas[0].vaginalLooseness == VaginaClass.LOOSENESS_GAPING && player.statusEffectv1(StatusEffects.CuntStretched) >= 100) {
 							outputText("\nYour " + Appearance.vaginaDescript(player,0) + " recovers from your ordeals, tightening up a bit.\n");
+							player.vaginas[0].vaginalLooseness--;
 							player.vaginas[0].vaginalLooseness--;
 							player.changeStatusValue(StatusEffects.CuntStretched, 1, 0);
 							needNext = true;
@@ -315,12 +317,14 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 						if (player.vaginas[0].vaginalLooseness == VaginaClass.LOOSENESS_GAPING_WIDE && player.statusEffectv1(StatusEffects.CuntStretched) >= 70) {
 							outputText("\nYour " + Appearance.vaginaDescript(player,0) + " recovers from your ordeals and becomes tighter.\n");
 							player.vaginas[0].vaginalLooseness--;
+							player.vaginas[0].vaginalLooseness--;
 							player.changeStatusValue(StatusEffects.CuntStretched, 1, 0);
 							needNext = true;
 						}
 					}
 					if (player.vaginas[0].vaginalLooseness == VaginaClass.LOOSENESS_LEVEL_CLOWN_CAR && player.statusEffectv1(StatusEffects.CuntStretched) >= 50) {
 						outputText("\nYour " + Appearance.vaginaDescript(player,0) + " recovers from the brutal stretching it has received and tightens up a little bit, but not much.\n");
+						player.vaginas[0].vaginalLooseness--;
 						player.vaginas[0].vaginalLooseness--;
 						player.changeStatusValue(StatusEffects.CuntStretched, 1, 0);
 						needNext = true;
@@ -332,11 +336,13 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 				if (player.ass.analLooseness == 2 && player.statusEffectv1(StatusEffects.ButtStretched) >= 72) {
 					outputText("\n<b>Your " + Appearance.assholeDescript(player) + " recovers from your ordeals, tightening up a bit.</b>\n");
 					player.ass.analLooseness--;
+					player.ass.analLooseness--;
 					player.changeStatusValue(StatusEffects.ButtStretched, 1, 0);
 					needNext = true;
 				}
 				if (player.ass.analLooseness == 3 && player.statusEffectv1(StatusEffects.ButtStretched) >= 48) {
 					outputText("\n<b>Your " + Appearance.assholeDescript(player) + " recovers from your ordeals, tightening up a bit.</b>\n");
+					player.ass.analLooseness--;
 					player.ass.analLooseness--;
 					player.changeStatusValue(StatusEffects.ButtStretched, 1, 0);
 					needNext = true;
@@ -344,11 +350,13 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 				if (player.ass.analLooseness == 4 && player.statusEffectv1(StatusEffects.ButtStretched) >= 24) {
 					outputText("\n<b>Your " + Appearance.assholeDescript(player) + " recovers from your ordeals and becomes tighter.</b>\n");
 					player.ass.analLooseness--;
+					player.ass.analLooseness--;
 					player.changeStatusValue(StatusEffects.ButtStretched, 1, 0);
 					needNext = true;
 				}
 				if (player.ass.analLooseness == 5 && player.statusEffectv1(StatusEffects.ButtStretched) >= 12) {
 					outputText("\n<b>Your " + Appearance.assholeDescript(player) + " recovers from the brutal stretching it has received and tightens up.</b>\n");
+					player.ass.analLooseness--;
 					player.ass.analLooseness--;
 					player.changeStatusValue(StatusEffects.ButtStretched, 1, 0);
 					needNext = true;
@@ -860,8 +868,8 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 			}
 			if (hungerActive || prison.inPrison) {
 				var multiplier:Number = 1.0;
-				if (player.findPerk(PerkLib.Survivalist) >= 0) multiplier -= 0.2;
-				if (player.findPerk(PerkLib.Survivalist2) >= 0) multiplier -= 0.2;
+				if (player.findPerk(PerkLib.Survivalist) >= 0) multiplier -= 0.25;
+				if (player.findPerk(PerkLib.Survivalist2) >= 0) multiplier -= 0.25;
 				if (player.findPerk(PerkLib.ManticoreCumAddict) >= 0) multiplier *= 2;
 				if (player.findPerk(PerkLib.HydraRegeneration) >= 0) multiplier *= 2;
 				//Hunger drain rate. If above 50, 1.5 per hour. Between 25 and 50, 1 per hour. Below 25, 0.5 per hour.
