@@ -213,8 +213,8 @@ import classes.Scenes.SceneLib;
 			if (player.weaponName == "large axe") outputText("You ready your oversized axe. ");
 			else outputText("You ready your axe. ");
 			outputText("With your strength, you hack away at the tree, making wedge-shaped cuts. After ten strikes, you yell \"<i>TIMMMMMMMMBER!</i>\" as the tree falls and lands on the ground with a loud crash. You are quite the fine lumberjack! You then cut the felled tree into pieces and you haul the wood back to your camp.\n\n");
-			flags[kFLAGS.ACHIEVEMENT_PROGRESS_DEFORESTER] += (10 + Math.floor(player.str / 8));
-			incrementWoodSupply(10 + Math.floor(player.str / 8));
+			flags[kFLAGS.ACHIEVEMENT_PROGRESS_DEFORESTER] += (15 + Math.floor(player.str / 8));
+			incrementWoodSupply(15 + Math.floor(player.str / 8));
 			fatigue(50, USEFATG_PHYSICAL);
 			doNext(camp.returnToCampUseTwoHours);
 		}
@@ -233,13 +233,13 @@ import classes.Scenes.SceneLib;
 			else outputText("Grabbing a hold of the handle, you press ");
 			outputText("the blade into the trunk of the tree, watching it cut straight through as wood chips fly all over the place. Eventually you reach the other side of the trunk, and the tree falls over with a mighty thud. You then proceed to cut the trunk into smaller pieces and haul them back to your camp.\n\n");
 			if (player.isInGoblinMech()) {
-				flags[kFLAGS.ACHIEVEMENT_PROGRESS_DEFORESTER] += (22 + Math.floor(player.str / 4));
-				incrementWoodSupply(22 + Math.floor(player.str / 4));
+				flags[kFLAGS.ACHIEVEMENT_PROGRESS_DEFORESTER] += (25 + Math.floor(player.str / 4));
+				incrementWoodSupply(25 + Math.floor(player.str / 4));
 				doNext(camp.returnToCampUseOneHour);
 			}
 			else {
-				flags[kFLAGS.ACHIEVEMENT_PROGRESS_DEFORESTER] += (13 + Math.floor(player.str / 7));
-				incrementWoodSupply(13 + Math.floor(player.str / 7));
+				flags[kFLAGS.ACHIEVEMENT_PROGRESS_DEFORESTER] += (15 + Math.floor(player.str / 7));
+				incrementWoodSupply(15 + Math.floor(player.str / 7));
 				fatigue(50, USEFATG_PHYSICAL);
 				doNext(camp.returnToCampUseTwoHours);
 			}
