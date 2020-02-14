@@ -193,7 +193,7 @@ use namespace CoC;
 		public function nailsEncounter():void {
 			clearOutput();
 			story.display("strings/nails/a");
-			var extractedNail:int = 5 + rand(player.inte / 5) + rand(player.str / 10) + rand(player.tou / 10) + rand(player.spe / 20) + 5;
+			var extractedNail:int = 5 + rand(player.inte / 5) + rand(player.str / 10) + rand(player.tou / 10) + rand(player.spe / 10) + 5;
 			flags[kFLAGS.ACHIEVEMENT_PROGRESS_SCAVENGER] += extractedNail;
 			flags[kFLAGS.CAMP_CABIN_NAILS_RESOURCES] += extractedNail;
 			story.display("strings/nails/b",{$extractedNail:extractedNail});
