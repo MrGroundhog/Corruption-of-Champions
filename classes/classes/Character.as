@@ -1,4 +1,4 @@
-﻿package classes 
+package classes 
 {
 import classes.BodyParts.Face;
 import classes.BodyParts.Tail;
@@ -822,7 +822,7 @@ import classes.Items.JewelryLib;
 			if (game.player.nekomataScore() >= 10) multimax += 0.1;
 			if (game.player.nekomataScore() >= 12 && game.player.tailType == 8 && game.player.tailCount == 2) multimax += 0.2;
 			if (game.player.unicornScore() >= 10) multimax += 0.1;
-			if (findPerk(PerkLib.HistoryCultivator) >= 0 || findPerk(PerkLib.PastLifeCultivator) >= 0) multimax += 0.1;
+			if (findPerk(PerkLib.HistoryCultivator) >= 0 || findPerk(PerkLib.PastLifeCultivator) >= 0) multimax += 0.25;
 			if (findPerk(PerkLib.Wizened) >= 0) multimax += 0.1;
 			if (findPerk(PerkLib.PathOfEnlightenment) >= 0) multimax += 0.1;
 			if (findPerk(PerkLib.Embodiment) >= 0) multimax += 0.1;
