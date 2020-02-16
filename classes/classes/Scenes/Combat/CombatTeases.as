@@ -1521,7 +1521,7 @@ public class CombatTeases extends BaseCombatContent {
 				if (!justText) dynStats("lus", 2 + rand(3));
 			}
 			// Similar to fetish check, only add XP if the player IS the player...
-			if (!justText && !SceneLib.urtaQuest.isUrta()) teaseXP(1 + bonusExpAfterSuccesfullTease());
+			if (!justText && !SceneLib.urtaQuest.isUrta()) teaseXP(2 + bonusExpAfterSuccesfullTease());
 		}
 		//Nuttin honey
 		else {
@@ -1553,8 +1553,8 @@ public class CombatTeases extends BaseCombatContent {
 	}
 	public function bonusExpAfterSuccesfullTease():Number {
 		var sucessBonusTeaseExp:Number = 1;
-		if (player.hasPerk(PerkLib.SuperSensual)) sucessBonusTeaseExp += 2;
-		if (player.hasPerk(PerkLib.Sensual)) sucessBonusTeaseExp += 1;
+		if (player.hasPerk(PerkLib.SuperSensual)) sucessBonusTeaseExp += 4;
+		if (player.hasPerk(PerkLib.Sensual)) sucessBonusTeaseExp += 2;
 		return sucessBonusTeaseExp;
 	}
 	public function maxTeaseLevel():Number {
