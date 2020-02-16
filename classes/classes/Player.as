@@ -3450,8 +3450,7 @@ use namespace CoC;
 				humanCounter+=2;
 			if (skin.base.pattern == Skin.PATTERN_NONE)
 				humanCounter++;
-			//humanCounter += (65 - internalChimeraScore());
-			humanCounter == 91;
+			humanCounter += (65 - internalChimeraScore());
 			if (isGargoyle()) humanCounter = 0;
 			End("Player","racialScore");
 			return humanCounter;
