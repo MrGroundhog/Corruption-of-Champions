@@ -3419,35 +3419,35 @@ use namespace CoC;
 			if (hairType == Hair.NORMAL)
 				humanCounter++;
 			if (faceType == Face.HUMAN)
-				humanCounter++;
+				humanCounter+=2;
 			if (eyes.type == Eyes.HUMAN)
 				humanCounter++;
 			if (ears.type == Ears.HUMAN)
 				humanCounter++;
-			if (ears.type == Ears.ELVEN)
-				humanCounter -= 7;
+			//if (ears.type == Ears.ELVEN)
+			//	humanCounter -= 7;
 			if (tongue.type == 0)
 				humanCounter++;
 			if (gills.type == 0)
-				humanCounter++;
+				humanCounter+=2;
 			if (antennae.type == 0)
-				humanCounter++;
+				humanCounter+=2;
 			if (horns.count == 0)
-				humanCounter++;
+				humanCounter+=2;
 			if (wings.type == Wings.NONE)
-				humanCounter++;
+				humanCounter+=2;
 			if (tailType == 0)
-				humanCounter++;
+				humanCounter+=2;
 			if (arms.type == Arms.HUMAN)
 				humanCounter++;
 			if (lowerBody == LowerBody.HUMAN)
 				humanCounter++;
 			if (rearBody.type == RearBody.NONE)
-				humanCounter++;
+				humanCounter+=2;
 			if (normalCocks() >= 1 || (hasVagina() && vaginaType() == 0))
-				humanCounter++;
+				humanCounter+=2;
 			if (breastRows.length == 1 && hasPlainSkinOnly() && skinTone != "slippery")
-				humanCounter++;
+				humanCounter+=2;
 			if (skin.base.pattern == Skin.PATTERN_NONE)
 				humanCounter++;
 			humanCounter += (65 - internalChimeraScore());
