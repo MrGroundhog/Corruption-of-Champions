@@ -8026,21 +8026,25 @@ use namespace CoC;
 			if (this.findPerk(PerkLib.GargoyleCorrupted) >= 0) {
 				minSen += 15;
 			}
+			if (findPerk(PerkLib.EzekielBlessing) >= 0) {
+				minLib += (25 * newGamePlusMod);
+				minSen += (25 * newGamePlusMod);
+			}
 			//Factory Perks
 			if (this.hasPerk(PerkLib.DemonicLethicite)) {minCor+=10;minLib+=10;}
 			if (this.hasPerk(PerkLib.ProductivityDrugs)) {minLib+=this.perkv1(PerkLib.ProductivityDrugs);minCor+=10;}
 			//Minimum Sensitivity
-			if (this.manticoreScore() >= 6) minSen += (30 * newGamePlusMod);
-			if (this.manticoreScore() >= 12) minSen += (15 * newGamePlusMod);
-			if (this.devilkinScore() >= 7) minSen += (10 * newGamePlusMod);
-			if (this.devilkinScore() >= 11) minSen += (5 * newGamePlusMod);
-			if (this.devilkinScore() >= 16) minSen += (25 * newGamePlusMod);
-			if (this.elfScore() >= 5) minSen += (15 * newGamePlusMod);
-			if (this.elfScore() >= 11) minSen += (15 * newGamePlusMod);
-			if (this.raijuScore() >= 5) minSen += (25 * newGamePlusMod);
-			if (this.raijuScore() >= 10) minSen += (25 * newGamePlusMod);
-			if (this.hellcatScore() >= 10) minSen += (25 * newGamePlusMod);
-			if (this.firesnailScore() >= 15) minSen += (50 * newGamePlusMod);
+			if (this.manticoreScore() >= 6) minSen += (60 * newGamePlusMod);
+			if (this.manticoreScore() >= 12) minSen += (30 * newGamePlusMod);
+			if (this.devilkinScore() >= 7) minSen += (20 * newGamePlusMod);
+			if (this.devilkinScore() >= 11) minSen += (10 * newGamePlusMod);
+			if (this.devilkinScore() >= 16) minSen += (50 * newGamePlusMod);
+			if (this.elfScore() >= 5) minSen += (30 * newGamePlusMod);
+			if (this.elfScore() >= 11) minSen += (30 * newGamePlusMod);
+			if (this.raijuScore() >= 5) minSen += (50 * newGamePlusMod);
+			if (this.raijuScore() >= 10) minSen += (50 * newGamePlusMod);
+			if (this.hellcatScore() >= 10) minSen += (50 * newGamePlusMod);
+			if (this.firesnailScore() >= 15) minSen += (100 * newGamePlusMod);
 			//Rings
 			if (this.jewelryName == "Ring of Intelligence") minInt += 5;
 			if (this.jewelryName == "Ring of Libido") minLib += 5;
@@ -9337,9 +9341,7 @@ use namespace CoC;
 				maxInt += (25 * newGamePlusMod);
 				maxWis += (25 * newGamePlusMod);
 				maxLib += (25 * newGamePlusMod);
-				minLib += (25 * newGamePlusMod);
 				maxSen += (25 * newGamePlusMod);
-				minSen += (25 * newGamePlusMod);
 			}
 			//Perks
 			if (findPerk(PerkLib.JobAllRounder) >= 0) {
