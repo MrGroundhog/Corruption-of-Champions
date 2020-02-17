@@ -9337,7 +9337,9 @@ use namespace CoC;
 				maxInt += (25 * newGamePlusMod);
 				maxWis += (25 * newGamePlusMod);
 				maxLib += (25 * newGamePlusMod);
+				minLib += (25 * newGamePlusMod);
 				maxSen += (25 * newGamePlusMod);
+				minSen += (25 * newGamePlusMod);
 			}
 			//Perks
 			if (findPerk(PerkLib.JobAllRounder) >= 0) {
