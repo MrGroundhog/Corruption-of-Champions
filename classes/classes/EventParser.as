@@ -451,6 +451,10 @@ public class EventParser {
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             }
+			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) {
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+            }
             //if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0 || player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) {
             //    if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             //    if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
@@ -482,15 +486,18 @@ public class EventParser {
             }
             flags[kFLAGS.UNKNOWN_FLAG_NUMBER_00228]--;
             if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
-            if (flags[kFLAGS.EVENT_PARSER_ESCAPE] == 1) {
-                flags[kFLAGS.EVENT_PARSER_ESCAPE] = 0;
-                return 2;
-            }
             if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             if (flags[kFLAGS.EVENT_PARSER_ESCAPE] == 1) {
                 flags[kFLAGS.EVENT_PARSER_ESCAPE] = 0;
                 return 2;
             }
+            if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+            if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+            if (flags[kFLAGS.EVENT_PARSER_ESCAPE] == 1) {
+                flags[kFLAGS.EVENT_PARSER_ESCAPE] = 0;
+                return 2;
+            }
+            if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             if (flags[kFLAGS.EVENT_PARSER_ESCAPE] == 1) {
                 flags[kFLAGS.EVENT_PARSER_ESCAPE] = 0;
@@ -522,6 +529,10 @@ public class EventParser {
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             }
+			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) {
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+            }
             //if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0 || player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) {
             //    if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             //    if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
@@ -550,7 +561,7 @@ public class EventParser {
         var chance:Number = player.statusEffectv1(StatusEffects.BirthedImps) * 2;
         if (chance > 7) chance = 7;
         if (player.findPerk(PerkLib.PiercedLethite) >= 0) chance += 4;
-        if (player.inHeat) chance += 2;
+        if (player.inHeat) chance += 4;
         if (SceneLib.vapula.vapulaSlave()) chance += 7;
         //Reduce chance
         var flags:DefaultDict = CoC.instance.flags;
