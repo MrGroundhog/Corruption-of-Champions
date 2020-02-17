@@ -1,4 +1,4 @@
-﻿package classes
+package classes
 {
 import classes.BodyParts.Antennae;
 import classes.BodyParts.Horns;
@@ -1192,11 +1192,11 @@ import flash.utils.getQualifiedClassName;
 		protected function baseXP():Number
 		{
 			var baseMonXP:Number = this.level * 5;
-			if (flags[kFLAGS.GAME_DIFFICULTY] == 1) baseMonXP += this.level * 0.5;
-			if (flags[kFLAGS.GAME_DIFFICULTY] == 2) baseMonXP += this.level;
-			if (flags[kFLAGS.GAME_DIFFICULTY] == 3) baseMonXP += this.level * 1.5;
-			if (flags[kFLAGS.GAME_DIFFICULTY] == 4) baseMonXP += this.level * 2;
-			if (this.level < 7) baseMonXP += (this.level * 5) + rand(this.level * 5);
+			if (flags[kFLAGS.GAME_DIFFICULTY] == 1) baseMonXP += this.level * 2;
+			if (flags[kFLAGS.GAME_DIFFICULTY] == 2) baseMonXP += this.level * 4;
+			if (flags[kFLAGS.GAME_DIFFICULTY] == 3) baseMonXP += this.level * 6;
+			if (flags[kFLAGS.GAME_DIFFICULTY] == 4) baseMonXP += this.level * 8;
+			if (this.level < 10) baseMonXP += (this.level * 5) + rand(this.level * 5);
 			else baseMonXP += rand(this.level * 5);
 			return baseMonXP;
 		}
