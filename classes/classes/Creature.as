@@ -2157,20 +2157,20 @@ public class Creature extends Utils
 				bonus = 100;
 			//Naga = +20 capacity
 			else if (lowerBody == 3)
-				bonus = 40;
+				bonus = 50;
 			//Wet pussy provides 20 point boost
 			if (findPerk(PerkLib.WetPussy) >= 0)
-				bonus += 40;
+				bonus += 50;
 			if (findPerk(PerkLib.HistorySlut) >= 0 || findPerk(PerkLib.PastLifeSlut) >= 0)
-				bonus += 40;
+				bonus += 50;
 			if (findPerk(PerkLib.OneTrackMind) >= 0)
-				bonus += 20;
+				bonus += 25;
 			if (findPerk(PerkLib.Cornucopia) >= 0)
-				bonus += 60;
+				bonus += 100;
 			if(findPerk(PerkLib.FerasBoonWideOpen) >= 0)
 				bonus += 50;
 			if(findPerk(PerkLib.FerasBoonMilkingTwat) >= 0)
-				bonus += 80;
+				bonus += 100;
 			total = (bonus + statusEffectv1(StatusEffects.BonusVCapacity) + 8 * vaginas[0].vaginalLooseness * vaginas[0].vaginalLooseness) * (1 + vaginas[0].vaginalWetness / 10);
 			return total;
 		}
@@ -2180,15 +2180,15 @@ public class Creature extends Utils
 			var bonus:Number = 0;
 			//Centaurs = +30 capacity
 			if (isTaur())
-				bonus = 60;
+				bonus = 50;
 			if (findPerk(PerkLib.HistorySlut) >= 0 || findPerk(PerkLib.PastLifeSlut) >= 0)
-				bonus += 40;
+				bonus += 25;
 			if (findPerk(PerkLib.Cornucopia) >= 0)
-				bonus += 60;
+				bonus += 50;
 			if (findPerk(PerkLib.OneTrackMind) >= 0)
-				bonus += 20;
+				bonus += 25;
 			if (ass.analWetness > 0)
-				bonus += 30;
+				bonus += 25;
 			return ((bonus + statusEffectv1(StatusEffects.BonusACapacity) + 6 * ass.analLooseness * ass.analLooseness) * (1 + ass.analWetness / 10));
 		}
 
