@@ -90,6 +90,8 @@ public class PlayerInfo extends BaseContent {
 			if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) preg++;
+			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) preg++;
+			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) preg++;
 			//if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0 || player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) preg++;
 			//if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0 || player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) preg++;
 			bodyStats += preg + "\n";
@@ -1080,7 +1082,7 @@ public class PlayerInfo extends BaseContent {
 			clearOutput();
 			outputText("<b>You are now level " + num2Text(player.level) + "!</b>");
 			if (flags[kFLAGS.STAT_GAIN_MODE] == CoC.STAT_GAIN_CLASSIC) {
-				if (player.level > 6) {
+				if (player.level > 10) {
 					player.statPoints += 5;
 					outputText("\n\nYou have gained five attribute points and one perk point!");
 				}
@@ -1089,7 +1091,7 @@ public class PlayerInfo extends BaseContent {
 					outputText("\n\nYou have gained ten attribute points and two perk points!");
 				}
 			} else {
-				if (player.level > 6) outputText("\n\nYou have gained one perk point!");
+				if (player.level > 10) outputText("\n\nYou have gained one perk point!");
 				else outputText("\n\nYou have gained two perk points!");
 			}
 
