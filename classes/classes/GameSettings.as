@@ -68,16 +68,16 @@ public class GameSettings extends BaseContent {
 			else outputText("Difficulty: <font color=\"#808000\"><b>Normal</b></font>\n No opponent stats modifiers. You can resume from bad-ends with penalties.");
 		}
 		else if (flags[kFLAGS.GAME_DIFFICULTY] == 1) {
-			outputText("Difficulty: <b><font color=\"#800000\">Hard</font></b>\n Opponent has 1,5x more HP/Lust/Wrath/Fatigue/Mana/Soulforce, does 15% more damage and giving ~10% more EXP. Bad-ends can ruin your game.");
+			outputText("Difficulty: <b><font color=\"#800000\">Hard</font></b>\n Opponent has 1,5x more HP/Lust/Wrath/Fatigue/Mana/Soulforce, does 15% more damage and giving ~40% more EXP. Bad-ends can ruin your game.");
 		}
 		else if (flags[kFLAGS.GAME_DIFFICULTY] == 2) {
-			outputText("Difficulty: <b><font color=\"#C00000\">Nightmare</font></b>\n Opponent has 2x more HP/Lust/Wrath/Fatigue/Mana/Soulforce, does 30% more damage and giving ~20% more EXP.");
+			outputText("Difficulty: <b><font color=\"#C00000\">Nightmare</font></b>\n Opponent has 2x more HP/Lust/Wrath/Fatigue/Mana/Soulforce, does 30% more damage and giving ~80% more EXP.");
 		}
 		else if (flags[kFLAGS.GAME_DIFFICULTY] == 3) {
-			outputText("Difficulty: <b><font color=\"#FF0000\">Extreme</font></b>\n Opponent has 3x more HP/Lust/Wrath/Fatigue/Mana/Soulforce, does more 50% damage and giving ~30% more EXP.");
+			outputText("Difficulty: <b><font color=\"#FF0000\">Extreme</font></b>\n Opponent has 3x more HP/Lust/Wrath/Fatigue/Mana/Soulforce, does more 50% damage and giving ~120% more EXP.");
 		}
 		else if (flags[kFLAGS.GAME_DIFFICULTY] >= 4) {
-			outputText("Difficulty: <b><font color=\"#FF0000\">Xianxia</font></b>\n Opponent has 5x more HP/Lust/Wrath/Fatigue/Mana/Soulforce, does more 100% damage and giving ~40% more EXP.");
+			outputText("Difficulty: <b><font color=\"#FF0000\">Xianxia</font></b>\n Opponent has 5x more HP/Lust/Wrath/Fatigue/Mana/Soulforce, does more 100% damage and giving ~160% more EXP.");
 		}
 
 		outputText("\n\n");
