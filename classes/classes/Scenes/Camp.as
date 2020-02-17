@@ -1,4 +1,4 @@
-﻿package classes.Scenes{
+package classes.Scenes{
 import classes.*;
 import classes.BodyParts.Arms;
 import classes.BodyParts.Eyes;
