@@ -454,6 +454,7 @@ public class EventParser {
 			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) {
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             }
             //if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0 || player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) {
             //    if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
@@ -465,6 +466,8 @@ public class EventParser {
             }
             //DOUBLE PREGGERS SPEED
             if (player.findPerk(PerkLib.BroodMother) >= 0) {
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             }
@@ -532,6 +535,7 @@ public class EventParser {
 			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) {
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             }
             //if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0 || player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) {
             //    if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
@@ -543,6 +547,8 @@ public class EventParser {
             }
             //DOUBLE PREGGERS SPEED
             if (player.findPerk(PerkLib.BroodMother) >= 0) {
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
+                if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
                 if (player.pregnancyAdvance()) needNext = true; //Make sure pregnancy texts aren't hidden
             }
