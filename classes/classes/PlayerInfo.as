@@ -82,6 +82,8 @@ public class PlayerInfo extends BaseContent {
 			if (player.findPerk(PerkLib.MaraesGiftFertility) >= 0) preg++;
 			if (player.findPerk(PerkLib.BroodMother) >= 0) preg++;
 			if (player.findPerk(PerkLib.BroodMother) >= 0) preg++;
+			if (player.findPerk(PerkLib.BroodMother) >= 0) preg++;
+			if (player.findPerk(PerkLib.BroodMother) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonBreedingBitch) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonBreedingBitch) >= 0) preg++;
 			if (player.findPerk(PerkLib.MagicalFertility) >= 0) preg++;
@@ -90,6 +92,7 @@ public class PlayerInfo extends BaseContent {
 			if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) preg++;
+			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) preg++;
 			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) preg++;
 			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) preg++;
 			//if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0 || player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) preg++;
