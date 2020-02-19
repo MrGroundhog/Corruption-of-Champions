@@ -74,12 +74,14 @@ public class PlayerInfo extends BaseContent {
 		}
 
 		bodyStats += "<b>Pregnancy Speed Multiplier:</b> ";
-		var preg:Number = 1;
+		var preg:Number = 2;
 		if (player.findPerk(PerkLib.Diapause) >= 0)
 			bodyStats += "? (Variable due to Diapause)\n";
 		else {
 			if (player.findPerk(PerkLib.MaraesGiftFertility) >= 0) preg++;
 			if (player.findPerk(PerkLib.MaraesGiftFertility) >= 0) preg++;
+			if (player.findPerk(PerkLib.MaraesGiftFertility) >= 0) preg++;
+			if (player.findPerk(PerkLib.MaraesGiftFertility) >= 0) preg++;
 			if (player.findPerk(PerkLib.BroodMother) >= 0) preg++;
 			if (player.findPerk(PerkLib.BroodMother) >= 0) preg++;
 			if (player.findPerk(PerkLib.BroodMother) >= 0) preg++;
@@ -88,10 +90,13 @@ public class PlayerInfo extends BaseContent {
 			if (player.findPerk(PerkLib.FerasBoonBreedingBitch) >= 0) preg++;
 			if (player.findPerk(PerkLib.MagicalFertility) >= 0) preg++;
 			if (player.findPerk(PerkLib.MagicalFertility) >= 0) preg++;
+			if (player.findPerk(PerkLib.MagicalFertility) >= 0) preg++;
+			if (player.findPerk(PerkLib.MagicalFertility) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonWideOpen) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) preg++;
 			if (player.findPerk(PerkLib.FerasBoonMilkingTwat) >= 0) preg++;
+			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) preg++;
 			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) preg++;
 			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) preg++;
 			if (player.findPerk(PerkLib.EzekielBlessing) >= 0) preg++;
