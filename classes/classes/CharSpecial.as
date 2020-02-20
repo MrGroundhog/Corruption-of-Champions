@@ -51,6 +51,7 @@ import classes.Items.*;
 			[ "Isaac", customIsaac, true, "Born of a disgraced priestess, Isaac was raised alone until she was taken by illness.  He worked a number of odd jobs until he was eventually chosen as champion." ],
 			//[ "XXXname", customXXXname, true, "" ],
 			[ "Leah", customLeah, true, "No Notes Available." ],
+			[ "Lilly", customLilly, true, "You is a googurl, you is craving liquids." ],
 			[ "Lukaz", customLukaz, true, "No Notes Available." ],
 			[ "Mara", customMara, true, "You're a bunny-girl with bimbo-tier curves, jiggly and soft, a curvy, wet girl with a bit of a flirty past." ],
 			[ "Mihari", customMihari, true, "The portal is not something you fear, not with your imposing armor and inscribed spellblade.  You're much faster and stronger than every champion that came before you, but will it be enough?" ],
@@ -665,6 +666,57 @@ import classes.Items.*;
 			//gel plate armor, warhammer, 88 body tone, 1 breast row, flat manly breasts, 0.2 inch nipples, 1 on each breast, draconic tongue, short hair-blue, light skin."	Lukaz
 			if (!player.hasPerk(PerkLib.PastLifeFighter)) player.createPerk(PerkLib.HistoryFighter,0,0,0,0);
 			player.createPerk(PerkLib.MessyOrgasms, 1.25, 0, 0, 0);
+		}
+		
+		private function customLilly():void {
+			player.createStatusEffect(StatusEffects.BonusVCapacity,9001,0,0,0);
+			player.createStatusEffect(StatusEffects.BonusACapacity,9001,0,0,0);
+			player.createVagina();
+			player.createBreastRow();
+			player.vaginas[0].vaginalWetness = VaginaClass.WETNESS_SLAVERING;
+			player.ass.analWetness = 5;
+			player.ass.analLooseness = 0;
+			player.hairLength = 12;
+			player.hips.type = 6;
+			player.butt.type = 6;
+			player.thickness = 50;
+			player.femininity = 100;
+			player.tone = 0;
+			player.tallness = 71;
+			player.skinTone = "pink";
+			player.hairColor = "pink";
+			player.eyes.colour = "blue"
+			player.skinAdj = "slimy";
+			player.skin.base.type = Skin.GOO;
+			player.hairType = Hair.GOO;
+			player.arms.type = Arms.GOO;
+			player.lowerBody = LowerBody.GOO;
+			player.faceType = Face.HUMAN;
+			player.eyes.type = Eyes.HUMAN;
+			player.ears.type = Ears.HUMAN;
+			player.tailType = Tail.NONE;
+			player.breastRows[0].breastRating = 6;
+			player.nippleLength = 0.25;
+			player.str = 50;
+			player.tou = 100;
+			player.spe = 20;
+			player.inte = 30;
+			player.sens = 30;
+			player.lib = 50;
+			player.cor = 0;
+			player.HP = EngineCore.maxHP();
+			player.fertility = 9001;
+			player.teaseLevel = 3;
+			player.createPerk(PerkLib.Regeneration, 0, 0, 0, 0);
+			player.createPerk(PerkLib.StrongBack, 0, 0, 0, 0);
+			player.createPerk(PerkLib.StrongBack2, 0, 0, 0, 0);
+			player.createPerk(PerkLib.StrongBack3, 0, 0, 0, 0);
+			player.createPerk(PerkLib.Tough, 1.0, 0, 0, 0);
+			player.createPerk(PerkLib.Strong, 1.0, 0, 0, 0);
+			player.createPerk(PerkLib.Fast, 1.0, 0, 0, 0);
+			player.createPerk(PerkLib.Smart, 1.0, 0, 0, 0);
+			player.createPerk(PerkLib.Wise, 1.0, 0, 0, 0);
+			if (!player.hasPerk(PerkLib.PastLifeAlchemist)) player.createPerk(PerkLib.HistoryAlchemist, 0, 0, 0, 0);
 		}
 		
 		private function customMara():void {
