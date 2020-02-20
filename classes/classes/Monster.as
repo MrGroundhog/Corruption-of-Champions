@@ -1164,12 +1164,12 @@ import flash.utils.getQualifiedClassName;
 			var difference:Number = 1;
 			var diff2:Number = this.level - playerLevel;
 			if (game.player.findPerk(PerkLib.AscensionUnderdog) >= 0) {
-				if (diff2 >= 40) difference += 8;
-				if (diff2 >= 1 && diff2 < 40) difference += diff2 * 0.2;
+				if (diff2 >= 40) difference += 10;
+				if (diff2 >= 1 && diff2 < 40) difference += diff2 * 0.25;
 			}
 			else {
 				if (diff2 >= 20) difference += 2;
-				if (diff2 >= 1 && diff2 < 20) difference += diff2 * 0.1;
+				if (diff2 >= 1 && diff2 < 20) difference += diff2 * 0.125;
 			}
 			if (diff2 == -2) difference -= 0.1;
 			if (diff2 == -3) difference -= 0.2;
