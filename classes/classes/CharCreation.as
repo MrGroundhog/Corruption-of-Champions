@@ -44,13 +44,13 @@ import coc.view.MainView;
 		public const MAX_SOULPURITY_LEVEL:int = 25;				//90 AP
 		public const MAX_INNERPOWER_LEVEL:int = 25;				//90 AP
 		public const MAX_FURY_LEVEL:int = 25;					//90 AP
-		public const MAX_MYSTICALITY_LEVEL:int = 20;			//90 AP
-		public const MAX_SPIRITUALENLIGHTENMENT_LEVEL:int = 20;	//90 AP
+		public const MAX_MYSTICALITY_LEVEL:int = 25;			//90 AP
+		public const MAX_SPIRITUALENLIGHTENMENT_LEVEL:int = 25;	//90 AP
 		public const MAX_WISDOM_LEVEL:int = -1;					//No maximum level.(845)
 		public const MAX_TRANSHUMANISM_LEVEL:int = 25;			//90 AP
 		public const MAX_FORTUNE_LEVEL:int = -1;				//No maximum level.(845)
-		public const MAX_VIRILITY_LEVEL:int = 10;				//40 AP
-		public const MAX_FERTILITY_LEVEL:int = 10;				//40 AP
+		public const MAX_VIRILITY_LEVEL:int = 25;				//40 AP
+		public const MAX_FERTILITY_LEVEL:int = 25;				//40 AP
 		public const MAX_MILK_FAUCET_LEVEL:int = 25;			//90 AP
 		public const MAX_CUM_HOSE_LEVEL:int = 25;				//90 AP
 		
@@ -163,7 +163,7 @@ import coc.view.MainView;
 			player.wis = 15;
 			player.sens = 15;
 			player.lib = 15;
-			player.cor = 15;
+			player.cor = 0;
 			player.soulforce = 50;
 			player.wrath = 0;
 			player.mana = 100;
