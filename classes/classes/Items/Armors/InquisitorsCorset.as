@@ -54,7 +54,7 @@ package classes.Items.Armors
 			while (game.player.findPerk(PerkLib.BloodMage) >= 0) game.player.removePerk(PerkLib.BloodMage);
 			while (game.player.findPerk(PerkLib.SluttySeduction) >= 0) game.player.removePerk(PerkLib.SluttySeduction);
 			game.player.createPerk(PerkLib.BloodMage,0,0,0,0);
-			game.player.createPerk(PerkLib.SluttySeduction,20,0,0,0);
+			game.player.createPerk(PerkLib.SluttySeduction,50,0,0,0);
 			return super.playerEquip();
 		}
 		
